@@ -1,0 +1,32 @@
+{
+  "sejong": {
+    "ok": true,
+    "fetchedAt": "2026-07-14T17:11:51.402Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 405806,
+    "outputs": [
+      {
+        "path": "data_26_2/sju(2026-2).xlsx",
+        "bytes": 73088,
+        "fresh": true
+      }
+    ],
+    "logTail": null
+  },
+  "yonsei": {
+    "ok": true,
+    "fetchedAt": "2026-07-14T17:57:52.821Z",
+    "exitCode": null,
+    "earlyExit": true,
+    "durationMs": 2734285,
+    "outputs": [
+      {
+        "path": "data_26_2/yonsei(2026-2).xlsx",
+        "bytes": 387837,
+        "fresh": true
+      }
+    ],
+    "logTail": null
+  }
+}

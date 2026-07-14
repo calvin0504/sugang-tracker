@@ -1,0 +1,37 @@
+{
+  "yonsei": {
+    "status": "detected",
+    "lastChecked": "2026-07-14T16:11:54.281Z",
+    "detail": "키워드 \"2026-2학기\" 발견",
+    "error": null,
+    "firstDetectedAt": "2026-07-14T16:11:54.282Z"
+  },
+  "korea": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "detail": "본문 1,528자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "sejong": {
+    "status": "detected",
+    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "detail": "키워드 \"2026/2학기\" 발견",
+    "error": null,
+    "firstDetectedAt": "2026-07-14T16:11:54.282Z"
+  },
+  "gist": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "detail": "본문 390자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "konkuk": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "detail": "본문 613자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  }
+}

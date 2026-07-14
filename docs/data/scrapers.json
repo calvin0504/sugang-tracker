@@ -1,0 +1,334 @@
+{
+  "snu": {
+    "entry": null,
+    "mode": "manual",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/snu(2026-2).xlsx"],
+    "blockers262": "수강스누에서 .xls 수동 다운로드 → scrap_snu/process_snu_excel.py 경로 2곳(입력/출력) 수정 후 실행",
+    "notes": "26-1: 서울대_02.06.xls → snu(2026-1).xlsx (대학원만 필터)"
+  },
+  "kaist": {
+    "entry": "node scrap_source/scrap_kaist.js",
+    "cwd": ".",
+    "mode": "semi",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/kaist(2026-2).xlsx"],
+    "blockers262": "실행 직전 브라우저에서 erp.kaist.ac.kr 접속해 세션 쿠키(WJSESSIONID 등)를 스크립트에 갱신해야 함 (NetFunnel 대기열). 갱신 후 npm run fetch kaist 로 강제 실행",
+    "notes": "연도 상수는 26-2로 수정 완료. HTTP 방식이라 쿠키만 유효하면 빠름"
+  },
+  "yonsei": {
+    "entry": "node scrap_source/scrap_yonsei.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "timeoutMin": 120,
+    "expectedOutputs": ["data_26_2/yonsei(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "학부+대학원 통합 수집(플래그 둘 다 false). 연도/학기 aria 세팅이 실제 조회에 반영되는지 첫 실행에서 행 수 검증할 것"
+  },
+  "skku": {
+    "entry": "node scrap_source/scrap_skku.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/skku(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "headless:false GUI 필요. 사이트가 학기 선택 없이 현재 학기를 서빙 — 2026-2 전환 후 실행해야 정확. Nexacro 순회라 실행 시간 김"
+  },
+  "postech": {
+    "entry": "node scrap_source/scrap_postech.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/postech(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "headless 가능, 이식성 좋음. 사이트 select에 2026 2학기 옵션이 열려 있어야 함"
+  },
+  "korea": {
+    "entry": "node scrap_source/scrap_korea.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/korea(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "하드코딩 세션 쿠키(2024-07)가 만료됐으면 실패 → 브라우저에서 새 쿠키 받아 fetch 헤더 3곳 갱신. 대학원만 수집"
+  },
+  "unist": {
+    "entry": "node scrap_source/scrap_unist.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/unist(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요(headless:false). 사이트 기본 학기를 긁으므로 2026-2 전환 후 실행. 대학원만"
+  },
+  "hanyang": {
+    "entry": "node scrap_source/scrap_hanyang.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/hanyang(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. URL 내 base64 토큰 만료 시 포털에서 새 수강편람 URL 필요"
+  },
+  "khu": {
+    "entry": "python scrap_kyunghee.py",
+    "cwd": "refactor_src",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/kyunghee(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "Python+Selenium+Chrome 필요. 캠퍼스×전공 전수 순회라 오래 걸림"
+  },
+  "sejong": {
+    "entry": "node scrap_source/scrap_sju.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/sju(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "headless 가능. 사이트 기본 학기 의존 — 편람 감지 후 실행하면 됨. 대학원만"
+  },
+  "dgist": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "스크레이퍼 없음 — 26-1도 사이트에서 .xls 수동 다운로드로 확보",
+    "notes": ""
+  },
+  "ajou": {
+    "entry": "node scrap_source/scrap_ajou.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/ajou(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 사이트 기본 학기 의존. 대학원만"
+  },
+  "cau": {
+    "entry": "node scrap_source/scrap_cau.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/cau(2026_2).xlsx"],
+    "blockers262": "",
+    "notes": "완전 headless 가능. 사이트 기본 학기 의존(포털이 2026-2 서빙 시점에 실행). 파일명이 언더스코어 표기(cau(2026_2))"
+  },
+  "gist": {
+    "entry": "python scrap_gist.py",
+    "cwd": "refactor_src",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/gist(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "HTTP 1회 요청이라 빠름. Python+Selenium 설치 필요(브라우저는 형식상 기동)"
+  },
+  "ewha": {
+    "entry": "node scrap_source/scrap_ehwa.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/ehwa(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "고정 오프셋 SSV 파싱이라 응답 포맷 변경에 취약 — 실행 후 행 수 검증 권장"
+  },
+  "kau": {
+    "entry": "node scrap_source/scrap_kau.js",
+    "cwd": ".",
+    "mode": "semi",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/kau(2026-2).xlsx"],
+    "blockers262": "로그인 필수 — KAU_STUDENT_ID/KAU_PASSWORD 환경변수로 본인 계정 지정 후, 수강신청 시스템이 열린 기간에 직접 실행",
+    "notes": "학기 상수는 26-2로 수정 완료"
+  },
+  "hufs": {
+    "entry": "node scrap_source/scrap_hufs.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/hufs(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 사이트 기본 학기 의존. 대학원만"
+  },
+  "uos": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "스크레이퍼 없음 (README TODO에만 존재, 포털 로그인 필요할 가능성)",
+    "notes": ""
+  },
+  "kmu": {
+    "entry": null,
+    "mode": "manual",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/kmu(2026-2).xlsx"],
+    "blockers262": "대학원별 엑셀 수동 수집 → data_26_2/계명대/ 에 넣고 merge_kmu_excels.py 경로를 26_2로 수정 후 병합",
+    "notes": "자동 스크레이퍼 없음"
+  },
+  "konkuk": {
+    "entry": "node scrap_source/scrap_kku.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/konkuk(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 학기코드 B01012(2학기) 자동 적용"
+  },
+  "dongguk": {
+    "entry": null,
+    "mode": "manual",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/dongguk(2026-2).xlsx"],
+    "blockers262": "대학원별 엑셀 13종 수동 수집 → merge_dongguk_excels.py 경로를 26_2로 수정 후 병합",
+    "notes": "dongguk_test.js는 파싱/저장 미완성"
+  },
+  "hongik": {
+    "entry": "node scrap_source/scrap_hongik.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/hongik(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "첫 실행 시 봇 챌린지를 GUI 창에서 1회 수동 통과(이후 쿠키 캐시 재사용). 페이지 연도는 기본값 의존"
+  },
+  "sogang": {
+    "entry": "python scrap_sogang.py",
+    "cwd": "refactor_src",
+    "mode": "semi",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/sogang(2026-2).xlsx"],
+    "blockers262": "연도/학기 선택 코드가 전부 주석 처리돼 사이트 기본 학기를 긁음 — 서강대 26-2 편람 공개 후 선택 로직 복원+실동작 검증 필요. 출력 파일명도 교정 필요",
+    "notes": "3개 후보 중 파싱이 가장 완성된 베이스. WD* ID 하드코딩이라 세션 변경에 취약"
+  },
+  "pusan": {
+    "entry": "python scrap_psu.py",
+    "cwd": "refactor_src",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/pusan(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "Python+Selenium. 26-1은 수동 다운로드+변환이었으나 26-2는 이 스크립트로 자동화 전환. 페이지네이션 XPath 취약 — 첫 실행 검증 필요"
+  },
+  "cnu": {
+    "entry": null,
+    "mode": "manual",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/cnu(2026-2).xlsx"],
+    "blockers262": "대학원별 엑셀 수동 수집 → data_26_2/충남대/ → merge_cnu_excels.py 경로 26_2로 수정 후 병합",
+    "notes": "자동 스크레이퍼 2종 모두 미완성/파손"
+  },
+  "cbnu": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "스크레이퍼 없음",
+    "notes": ""
+  },
+  "kw": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "스크레이퍼 없음",
+    "notes": ""
+  },
+  "ssu": {
+    "entry": "node scrap_source/scrap_ssu.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/ssu(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 드롭다운에 2학기 옵션이 열려 있어야 함(없으면 명시적 실패). 대학원 8종 순회"
+  },
+  "kookmin": {
+    "entry": "node scrap_source/scrap_kookmin.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/kookmin(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "공개 API 기반. 단과대별 500과목 초과 시 누락 가능성 유의"
+  },
+  "sookmyung": {
+    "entry": "node scrap_source/scrap_sookmyung.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/smwu(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 일반대학원 전용(산출물명 smwu). 26-1의 sookmyung(2026-1).xlsx 생산 스크립트는 저장소에 없음 — 필요 시 별도 확보"
+  },
+  "sungshin": {
+    "entry": "node scrap_source/scrap_sungshin.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/sungshin(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "15초 타임아웃 저장 방식이라 응답 지연 시 누락 위험 — 행 수 검증 권장. 대학원만"
+  },
+  "inha": {
+    "entry": "node scrap_source/scrap_inha.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/inha(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "인하대 사이트는 항상 최신 학기만 제공 — 2026-2 게시 후 실행. GUI 필요"
+  },
+  "knu": {
+    "entry": "node scrap_source/scrap_knu.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/kyungpook(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 사이트 기본 학기 의존. 대학원만"
+  },
+  "mju": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "스크레이퍼 없음",
+    "notes": ""
+  },
+  "seoultech": {
+    "entry": "node scrap_source/scrap_seoultech.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/seoultech(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "학부만 자동 수집. 대학원은 로그인 게이트 — 26-1처럼 원본 수동 확보 후 convert_seoultech_grad.py 변환 필요. 폴백 쿠키 만료 시 갱신"
+  },
+  "kdi": {
+    "entry": null,
+    "mode": "manual",
+    "ready262": false,
+    "expectedOutputs": ["data_26_2/KDI(2026-2).xlsx"],
+    "blockers262": "가을학기 시간표 PDF→엑셀 수동 변환 → convert_kdi_xlsx_26_1.py 경로 2곳 수정 후 실행",
+    "notes": ""
+  },
+  "jbnu": {
+    "entry": "node scrap_source/scrap_jbnu.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": ["data_26_2/jbnu(2026-2).xlsx"],
+    "blockers262": "",
+    "notes": "GUI 필요. 키보드 인덱스 기반 드롭다운 순회라 취약 — 실행 로그로 선택 항목 검증. 사이트 기본 학기 의존"
+  },
+  "donga": {
+    "entry": null,
+    "mode": "none",
+    "ready262": false,
+    "expectedOutputs": [],
+    "blockers262": "포털 로그인 필요 — 자동화 제외",
+    "notes": ""
+  }
+}

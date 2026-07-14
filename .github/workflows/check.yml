@@ -1,0 +1,47 @@
+name: check-sugang
+
+on:
+  schedule:
+    # 매시 5분에 실행 (UTC 기준이지만 매시라서 KST에서도 매시)
+    - cron: '5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: check-sugang
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run checker
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node checker/check.mjs
+
+      - name: Commit updated status
+        run: |
+          git config user.name "sugang-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: status update $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push
+          fi

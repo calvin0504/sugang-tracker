@@ -1,0 +1,14 @@
+{
+  "name": "sugang-tracker",
+  "private": true,
+  "type": "module",
+  "description": "26-2 수강신청/수강편람 오픈 감지 트래커",
+  "scripts": {
+    "check": "node checker/check.mjs",
+    "fetch": "node checker/fetch.mjs",
+    "dashboard": "npx http-server docs -p 8173 -c-1"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

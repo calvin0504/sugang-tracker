@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>26-2 수강신청 트래커</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%E2%8F%B0%3C%2Ftext%3E%3C%2Fsvg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="page-head">
+      <div>
+        <h1>⏰ 26-2 수강신청 트래커</h1>
+        <p class="sub">2026학년도 2학기 수강편람 오픈 감지 · <span id="last-updated">-</span></p>
+      </div>
+    </header>
+
+    <section class="tiles" id="tiles" aria-label="요약"></section>
+
+    <section class="controls">
+      <div class="chips" id="chips" role="group" aria-label="상태 필터"></div>
+      <input id="search" type="search" placeholder="학교 검색…" aria-label="학교 검색" />
+    </section>
+
+    <section class="table-scroll">
+      <table id="school-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>학교</th>
+            <th>26-1 기간 <span class="th-hint">(참고)</span></th>
+            <th>26-2 기간</th>
+            <th>편람 상태</th>
+            <th>시간표</th>
+            <th>마지막 확인</th>
+            <th>링크</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+
+    <footer class="page-foot">
+      상태는 GitHub Actions가 주기적으로 자동 갱신 · 감지 로직은 <code>checker/check.mjs</code> ·
+      26-2 확정 일정은 <code>docs/data/schools.json</code>의 <code>period262</code>에 직접 기입
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
