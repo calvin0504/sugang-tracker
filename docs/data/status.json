@@ -1,37 +1,219 @@
 {
   "yonsei": {
     "status": "detected",
-    "lastChecked": "2026-07-14T16:11:54.281Z",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
     "detail": "키워드 \"2026-2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "korea": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
     "detail": "본문 1,528자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "sejong": {
     "status": "detected",
-    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
     "detail": "키워드 \"2026/2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "gist": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
     "detail": "본문 390자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "konkuk": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T16:11:54.282Z",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
     "detail": "본문 613자 검사, 키워드 없음",
     "error": null,
+    "firstDetectedAt": null
+  },
+  "kaist": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
+    "detail": "본문 288자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "skku": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
+    "detail": "본문 89자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "postech": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
+    "detail": "본문 1,415자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "unist": {
+    "status": "error",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
+    "detail": null,
+    "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://uspap5.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko#\", waiting until \"domcontentloaded\"\n",
+    "firstDetectedAt": null
+  },
+  "hanyang": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.908Z",
+    "detail": "본문 829자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "khu": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 2,479자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "dgist": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 184,350자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "ajou": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 5,799자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "cau": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 93자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "ewha": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 221자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "kau": {
+    "status": "error",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": null,
+    "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://su.kau.ac.kr/sugang/index.su\nCall log:\n  - navigating to \"https://su.kau.ac.kr/sugang/index.su\", waiting until \"domcontentloaded\"\n",
+    "firstDetectedAt": null
+  },
+  "hufs": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 2,073자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "kmu": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 323자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "dongguk": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 196자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "hongik": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 506자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "sogang": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 1,747자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "pusan": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 1,283자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "cnu": {
+    "status": "error",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": null,
+    "error": "페이지 본문이 비어 있음 (렌더링 실패 가능성)",
+    "firstDetectedAt": null
+  },
+  "ssu": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 1,806자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "kookmin": {
+    "status": "error",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": null,
+    "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://sugang.kookmin.ac.kr/front/enrollment/course-catalog\", waiting until \"domcontentloaded\"\n",
+    "firstDetectedAt": null
+  },
+  "sookmyung": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 522자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "sungshin": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 776자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "inha": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 2,457자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "knu": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 506자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "kdi": {
+    "status": "not_detected",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": "본문 735자 검사, 키워드 없음",
+    "error": null,
+    "firstDetectedAt": null
+  },
+  "jbnu": {
+    "status": "error",
+    "lastChecked": "2026-07-14T20:38:19.909Z",
+    "detail": null,
+    "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://oasis.jbnu.ac.kr/jbnu/sugang/sbjt/sbjt.html?param=KOR\nCall log:\n  - navigating to \"https://oasis.jbnu.ac.kr/jbnu/sugang/sbjt/sbjt.html?param=KOR\", wait",
     "firstDetectedAt": null
   }
 }
