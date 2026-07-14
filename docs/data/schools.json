@@ -15,9 +15,9 @@
     "code": "KAIST",
     "ref261": "2026.01.05 ~ 01.09",
     "period262": "",
-    "catalogUrl": "https://erp.kaist.ac.kr/com/lgin/SsoCtr/initExtPageWork.do?link=estblSubjt",
-    "notes": "학부/대학원 통합 표기. 26-1 기준 불필요 조직(부전공 프로그램 등) 다수 → 제거 필요",
-    "check": { "type": "keyword" }
+    "catalogUrl": "https://otl.kaist.ac.kr/",
+    "notes": "감지는 OTL 공개 API(가을=semester 3). 수집용 erp 편람은 로그인 필요: erp.kaist.ac.kr estblSubjt. 26-1 기준 불필요 조직 제거 필요",
+    "check": { "type": "probe" }
   },
   {
     "id": "yonsei",
@@ -36,8 +36,8 @@
     "ref261": "(선착순) 2026.02.13 ~ 02.20 전후, 사전 02.03~02.04",
     "period262": "",
     "catalogUrl": "https://kingoinfo.skku.edu/gaia/nxui/outdex.html?language=KO&menuId=NHSSU030840M",
-    "notes": "Nexacro 기반 — 렌더링 대기 필요",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "Nexacro 앱 — 메뉴 클릭 후 학기 콤보 XHR로 판정 (키워드 불가)",
+    "check": { "type": "probe" }
   },
   {
     "id": "postech",
@@ -55,9 +55,9 @@
     "code": "KOREA",
     "ref261": "2026.02.10 ~ 02.14 (학년별 1일 슬롯)",
     "period262": "",
-    "catalogUrl": "https://sugang.korea.ac.kr/",
-    "notes": "4학년(2/10)→3(2/11)→2(2/12)→1(2/13), 각 10:00~익일 09:00",
-    "check": { "type": "keyword" }
+    "catalogUrl": "https://sugang.korea.ac.kr/p/v/lectList?lang=ko",
+    "notes": "공개 과목조회 API로 대학원(0309) 2026-2 조회 가능 여부 판정. /graduate/는 수강신청 기간 외 폐쇄",
+    "check": { "type": "probe" }
   },
   {
     "id": "unist",
@@ -66,8 +66,8 @@
     "ref261": "2026.02.05 ~ 02.06",
     "period262": "",
     "catalogUrl": "https://uspap5.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko#",
-    "notes": "SAP WebDynpro — 렌더링 대기 필요",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "학기 사이엔 SAP 서버 방화벽 폐쇄 — 서버 3대(uspap5/uspap3/uspdbsvc) 순차 프로브, 재개 자체가 임박 신호 (8월 초 예상)",
+    "check": { "type": "probe" }
   },
   {
     "id": "hanyang",
@@ -155,9 +155,9 @@
     "code": "KAU",
     "ref261": "2026.02.03~04 / 02.10~11",
     "period262": "",
-    "catalogUrl": "https://su.kau.ac.kr/sugang/index.su",
-    "notes": "타입 생성 필요",
-    "check": { "type": "keyword" }
+    "catalogUrl": "https://sugang.kau.ac.kr/sugang/index.su",
+    "notes": "타입 생성 필요. 구 su.kau.ac.kr 도메인 폐기 → sugang.kau.ac.kr. 로그인 페이지의 공지 제목으로 감지",
+    "check": { "type": "keyword", "any": ["2026학년도 2학기", "2026-2", "2학기 수강신청"] }
   },
   {
     "id": "hufs",
@@ -245,9 +245,9 @@
     "code": "CNU",
     "ref261": "2026.02.02 ~ 02.06 (예비 01.26~01.28)",
     "period262": "",
-    "catalogUrl": "https://cnuit.cnu.ac.kr/patis/common/OutLinkController.do",
-    "notes": "",
-    "check": { "type": "keyword" }
+    "catalogUrl": "https://cnuit.cnu.ac.kr/checkMenu.jsp?p0=M69r16057e79Y231",
+    "notes": "sugang.cnu.ac.kr 로그인 페이지의 '수강편람' 공개 메뉴. 학기 콤보를 2학기로 바꿔 조회 건수로 판정",
+    "check": { "type": "probe" }
   },
   {
     "id": "cbnu",
@@ -286,8 +286,8 @@
     "ref261": "4·5학년 02.09 / 3학년 02.10 / 1·2학년 02.11 / 전체 02.13·02.19",
     "period262": "",
     "catalogUrl": "https://sugang.kookmin.ac.kr/front/enrollment/course-catalog",
-    "notes": "대학원 02.20, 신·편입 02.25",
-    "check": { "type": "keyword" }
+    "notes": "운영기간 외 서버 방화벽 폐쇄 — 공개 API 응답 재개가 임박 신호 (8월 초 예상). 대학원 02.20, 신·편입 02.25",
+    "check": { "type": "probe" }
   },
   {
     "id": "sookmyung",
@@ -365,9 +365,9 @@
     "code": "JBNU",
     "ref261": "",
     "period262": "",
-    "catalogUrl": "https://oasis.jbnu.ac.kr/jbnu/sugang/sbjt/sbjt.html?param=KOR",
-    "notes": "타입 생성 필요",
-    "check": { "type": "keyword" }
+    "catalogUrl": "https://jump.jbnu.ac.kr/link?div=sucrPlan",
+    "notes": "타입 생성 필요. 구 oasis 폐쇄 → JUMP 포털. 공개 API로 개설강좌조회기간(2026-07-15 09:00 시작 예정) 판정. 수집 스크레이퍼(scrap_jbnu.js)는 oasis 기반이라 JUMP 대응 재작성 필요",
+    "check": { "type": "probe" }
   },
   {
     "id": "donga",

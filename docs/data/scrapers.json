@@ -29,11 +29,11 @@
   "skku": {
     "entry": "node scrap_source/scrap_skku.js",
     "cwd": ".",
-    "mode": "auto",
-    "ready262": true,
+    "mode": "semi",
+    "ready262": false,
     "expectedOutputs": ["data_26_2/skku(2026-2).xlsx"],
-    "blockers262": "",
-    "notes": "headless:false GUI 필요. 사이트가 학기 선택 없이 현재 학기를 서빙 — 2026-2 전환 후 실행해야 정확. Nexacro 순회라 실행 시간 김"
+    "blockers262": "사이트 기본 학기가 아직 여름학기(202615) — 스크레이퍼에 학기 콤보 선택(cboYearTerm=202620, 프로브와 동일한 nexacro API 방식) 추가 후 실행해야 2026-2가 수집됨",
+    "notes": "headless:false GUI 필요. Nexacro 순회라 실행 시간 김. checker/probes/skku.mjs에 콤보 구동 방식 참고 코드 있음"
   },
   "postech": {
     "entry": "node scrap_source/scrap_postech.js",
@@ -317,11 +317,11 @@
   "jbnu": {
     "entry": "node scrap_source/scrap_jbnu.js",
     "cwd": ".",
-    "mode": "auto",
-    "ready262": true,
+    "mode": "semi",
+    "ready262": false,
     "expectedOutputs": ["data_26_2/jbnu(2026-2).xlsx"],
-    "blockers262": "",
-    "notes": "GUI 필요. 키보드 인덱스 기반 드롭다운 순회라 취약 — 실행 로그로 선택 항목 검증. 사이트 기본 학기 의존"
+    "blockers262": "스크레이퍼가 폐쇄된 구 oasis.jbnu.ac.kr 기반 — 신형 JUMP 포털(jump.jbnu.ac.kr sucrPlan) 대응 재작성 필요",
+    "notes": "감지 프로브가 확인한 JUMP 공개 API(SucrLessnSbjctInq/list.do)를 쓰면 재작성이 오히려 단순해질 수 있음"
   },
   "donga": {
     "entry": null,

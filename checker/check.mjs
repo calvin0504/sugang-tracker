@@ -50,6 +50,11 @@ async function checkSchool(context, school) {
   const keywords = check.any?.length ? check.any : DEFAULT_KEYWORDS;
   const page = await context.newPage();
   try {
+    // 키워드로 판정이 안 되는 학교는 checker/probes/<id>.mjs 가 페이지를 직접 조작해 판정한다.
+    if (check.type === 'probe') {
+      const probe = await import(new URL(`./probes/${school.id}.mjs`, import.meta.url));
+      return await probe.default(page, school);
+    }
     await page.goto(catalogUrl, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
     await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(check.waitMs ?? DEFAULT_WAIT_MS);
