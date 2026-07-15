@@ -1,219 +1,219 @@
 {
   "yonsei": {
     "status": "detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "키워드 \"2026-2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "korea": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "수업정보 조회 기간이 아닙니다.",
     "error": null,
     "firstDetectedAt": null
   },
   "sejong": {
     "status": "detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "키워드 \"2026/2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "gist": {
-    "status": "error",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
-    "detail": null,
-    "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://zeus.gist.ac.kr/sys/lecture/lecture_open.do\", waiting until \"domcontentloaded\"\n",
+    "status": "not_detected",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
+    "detail": "본문 390자 검사, 키워드 없음",
+    "error": null,
     "firstDetectedAt": null
   },
   "konkuk": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 613자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "kaist": {
     "status": "detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "OTL API에 2026 가을학기 강의 등재됨",
     "error": null,
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "skku": {
     "status": "detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "학기 콤보에 2026학년도 2학기 등재됨",
     "error": null,
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "postech": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 1,415자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "unist": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "SAP 서버 3곳 모두 미개방(학기 간 셧다운) — 서버 재개 자체가 임박 신호, 8월 초 예상",
     "error": null,
     "firstDetectedAt": null
   },
   "hanyang": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 829자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "khu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 2,479자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "dgist": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 184,350자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "ajou": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 5,799자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "cau": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 93자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "ewha": {
-    "status": "error",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
-    "detail": null,
-    "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://eureka.ewha.ac.kr/eureka/my/public.do?pgId=P531005521\", waiting until \"domcontentloaded\"\n",
+    "status": "not_detected",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
+    "detail": "본문 221자 검사, 키워드 없음",
+    "error": null,
     "firstDetectedAt": null
   },
   "kau": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 558자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "hufs": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 2,073자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "kmu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 323자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "dongguk": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 196자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "hongik": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 506자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "sogang": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 1,747자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "pusan": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 1,283자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "cnu": {
-    "status": "error",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
-    "detail": null,
-    "error": "page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://cnuit.cnu.ac.kr/checkMenu.jsp?p0=M69r16057e79Y231\", waiting until \"domcontentloaded\"\n",
+    "status": "detected",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
+    "detail": "2026-2 조회 결과 총 3,596건",
+    "error": null,
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "ssu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 1,806자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "kookmin": {
     "status": "detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "공통코드 API에 2026-2 항목 존재",
     "error": null,
     "firstDetectedAt": "2026-07-14T22:11:52.907Z"
   },
   "sookmyung": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 522자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "sungshin": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 776자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "inha": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 2,456자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "knu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 506자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "kdi": {
     "status": "not_detected",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
     "detail": "본문 735자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "jbnu": {
-    "status": "error",
-    "lastChecked": "2026-07-14T22:11:52.907Z",
-    "detail": null,
-    "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
-    "firstDetectedAt": null
+    "status": "detected",
+    "lastChecked": "2026-07-15T00:04:07.574Z",
+    "detail": "개설강좌조회기간 개시 (undefined ~)",
+    "error": null,
+    "firstDetectedAt": "2026-07-15T00:04:07.574Z"
   }
 }
