@@ -11,6 +11,7 @@
 import { spawn } from 'node:child_process';
 import { mkdir, readFile, writeFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -104,7 +105,26 @@ function runCommand(command, cwd, logPrefix, timeoutMin, pollDone) {
   });
 }
 
-async function verifyOutputs(spec, startedAt) {
+// 행 수 검증용 — SchoolCourse 쪽에 이미 설치된 exceljs를 빌려 쓴다 (루트에 의존성 추가 없이)
+let ExcelJS = null;
+try {
+  ExcelJS = createRequire(path.join(SCHOOLCOURSE_DIR, 'package.json'))('exceljs');
+} catch {
+  console.warn('exceljs 로드 실패 — 행 수 검증을 건너뜁니다 (SchoolCourse에서 npm install 필요)');
+}
+
+async function countXlsxRows(file) {
+  if (!ExcelJS || !file.toLowerCase().endsWith('.xlsx')) return null;
+  try {
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(file);
+    return workbook.worksheets[0]?.actualRowCount ?? null;
+  } catch {
+    return null; // 손상/포맷 문제 — 행 수는 미상으로 두고 크기 검증만 적용
+  }
+}
+
+async function verifyOutputs(spec, startedAt, { withRows = false } = {}) {
   const results = [];
   for (const rel of spec.expectedOutputs ?? []) {
     const file = path.join(SCHOOLCOURSE_DIR, rel);
@@ -115,6 +135,7 @@ async function verifyOutputs(spec, startedAt) {
         bytes: info.size,
         // 실행 시작 이후에 갱신된 파일만 "이번 실행 산출물"로 인정
         fresh: info.mtimeMs >= startedAt - 5000 && info.size > 0,
+        rows: withRows ? await countXlsxRows(file) : undefined,
       });
     } catch {
       results.push({ path: rel, bytes: 0, fresh: false });
@@ -166,10 +187,16 @@ for (const id of targets) {
         };
 
   const run = await runCommand(spec.entry, cwd, `  [${id}]`, spec.timeoutMin, pollDone);
-  const outputs = await verifyOutputs(spec, startedAt);
+  const outputs = await verifyOutputs(spec, startedAt, { withRows: true });
   const outputsOk = (spec.expectedOutputs ?? []).length === 0 || outputs.every((o) => o.fresh);
+  // 행 수 검증: 사이트 기본 학기를 긁는 스크레이퍼가 빈/부분 파일을 남기는 사고 방지.
+  // 행 수를 읽지 못한 파일(null)은 크기 검증만 적용한다.
+  const rowShortfalls = spec.minRows
+    ? outputs.filter((o) => typeof o.rows === 'number' && o.rows < spec.minRows)
+    : [];
+  const rowsOk = rowShortfalls.length === 0;
   // 정상 종료(exit 0) 또는 산출물 완성으로 조기 종료한 경우 성공
-  const ok = outputsOk && (run.exitCode === 0 || run.earlyExit);
+  const ok = outputsOk && rowsOk && (run.exitCode === 0 || run.earlyExit);
   if (!ok) failed += 1;
 
   fetchLog[id] = {
@@ -179,14 +206,22 @@ for (const id of targets) {
     earlyExit: run.earlyExit ?? false,
     durationMs: run.durationMs,
     outputs,
+    minRows: spec.minRows ?? null,
     logTail: ok ? null : run.logTail.slice(-1500),
   };
   await writeFile(FETCH_PATH, `${JSON.stringify(fetchLog, null, 2)}\n`);
-  console.log(
-    ok
-      ? `✔ [${id}] 완료 (${Math.round(run.durationMs / 1000)}초, ${outputs.map((o) => `${o.path} ${(o.bytes / 1024).toFixed(0)}KB`).join(', ') || '출력 검증 생략'})`
-      : `✘ [${id}] 실패 — exit ${run.exitCode}, 산출물 ${outputsOk ? '정상' : '누락/미갱신'}`,
-  );
+  const outputSummary = outputs
+    .map((o) => `${o.path} ${(o.bytes / 1024).toFixed(0)}KB${typeof o.rows === 'number' ? `/${o.rows.toLocaleString()}행` : ''}`)
+    .join(', ');
+  if (ok) {
+    console.log(`✔ [${id}] 완료 (${Math.round(run.durationMs / 1000)}초, ${outputSummary || '출력 검증 생략'})`);
+  } else if (!rowsOk) {
+    console.log(
+      `✘ [${id}] 행 수 부족 — ${rowShortfalls.map((o) => `${o.path} ${o.rows}행 < 기준 ${spec.minRows}행`).join(', ')} (사이트가 아직 이전 학기를 서빙 중일 가능성)`,
+    );
+  } else {
+    console.log(`✘ [${id}] 실패 — exit ${run.exitCode}, 산출물 ${outputsOk ? '정상' : '누락/미갱신'}`);
+  }
 }
 
 console.log(`\n완료: 성공 ${targets.length - failed} / 실패 ${failed}`);

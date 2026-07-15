@@ -28,6 +28,8 @@ GitHub Actions (cron, 매시)
 | `docs/data/scrapers.json` | 학교 id → SchoolCourse 스크레이퍼 매핑 + 26-2 준비 상태 |
 | `docs/data/fetch.json` | 수집 러너가 갱신하는 시간표 수집 결과 (직접 수정하지 않음) |
 | `checker/check.mjs` | Playwright 기반 편람 오픈 감지 스크립트 |
+| `checker/probes/<id>.mjs` | 키워드로 판정 불가한 학교의 개별 감지 프로브 (`check.type: "probe"`) |
+| `checker/tools/inspect-xhr.mjs` | 프로브 제작용 — 학교 페이지의 조회 XHR 페이로드 캡처 도구 |
 | `checker/fetch.mjs` | 감지된 학교의 스크레이퍼를 실행하는 수집 러너 |
 | `docs/` | 정적 대시보드 (GitHub Pages 루트) |
 | `.github/workflows/check.yml` | 매시 자동 체크 + 결과 커밋 |
@@ -52,12 +54,28 @@ npm run fetch -- --force          # 이미 수집한 학교도 재수집
 npm run dashboard                 # http://localhost:8173 에서 대시보드 확인
 ```
 
+### 감지 방식: 키워드 vs 프로브
+
+키워드 스캔(`check.any`)은 페이지 본문에 "2026학년도 2학기" 같은 문구가 **표시되는**
+학교에만 통한다. 상당수 학교(중앙대·GIST·건국대·동국대·계명대·경북대·성신여대·
+숙명여대·홍익대 등)는 **조회 폼만 있는 페이지**라 어떤 키워드도 나타나지 않는다 —
+이런 곳은 편람이 올라와도 키워드로는 영원히 못 잡는다(조용한 미탐).
+
+이런 학교는 `check.type: "probe"`로 전환하고 `checker/probes/<id>.mjs`에
+"2026/2학기 조건으로 실제 조회를 날려 결과 건수 > 0"으로 판정하는 프로브를 만든다.
+프로브가 0건일 때는 이미 열린 학기(2026-1)를 **컨트롤로 조회**해서, API가 바뀌어
+쿼리가 깨진 경우를 미탐이 아니라 `error`로 드러내는 패턴을 권장한다(cau·gist 참고).
+조회 XHR 파악에는 `node checker/tools/inspect-xhr.mjs <id>`를 쓴다.
+
 ### 시간표 수집 흐름
 
 1. 체커가 편람을 감지하면 대시보드에 **⏳ 수집 대기**로 표시되고 Discord 알림이 온다.
 2. 로컬에서 `npm run fetch` 실행 → 감지됐고 `ready262: true`인 학교의 스크레이퍼가
    순차 실행되어 `SchoolCourse/data_26_2/학교(2026-2).xlsx`가 생긴다.
-3. 결과는 `docs/data/fetch.json`에 기록되고 대시보드에 **📥 수집됨 / ⚠ 수집 실패**로 반영된다.
+3. 산출물은 크기·갱신시각에 더해 **행 수**(`scrapers.json`의 `minRows`, 26-1 실측의
+   약 40%)로 검증한다 — 사이트가 아직 이전 학기를 서빙 중이거나 빈 파일이 저장된
+   경우를 성공으로 오판하지 않기 위함.
+4. 결과는 `docs/data/fetch.json`에 기록되고 대시보드에 **📥 수집됨 / ⚠ 수집 실패**로 반영된다.
 4. 학교별 준비 상태·블로커는 `docs/data/scrapers.json` 참고:
    - `mode: "auto"` — 그대로 실행 가능 (일부는 GUI 창이 뜸)
    - `mode: "semi"` — 실행 전 손이 감 (KAIST=세션 쿠키 갱신, 고려대=쿠키 만료 시 갱신, 항공대=본인 계정, 서강대=학기 선택 로직 복원)

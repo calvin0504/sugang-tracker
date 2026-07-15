@@ -25,15 +25,17 @@ async function call(path) {
 }
 
 export default async function probe() {
-  const date = await call('date.do');
+  // 게이트(strSchedule)가 Y여도 과목 목록이 0건인 기간이 있었음(2026-07-15) —
+  // 수집 트리거로는 실제 과목이 등재됐을 때만 의미가 있으므로 목록 건수로 판정한다.
+  const list = await call('list.do').catch(() => null);
+  const count = list?.dsEstSbjList?.length ?? 0;
+  if (count > 0) {
+    return { status: 'detected', detail: `2026-2 개설강좌 ${count.toLocaleString()}건 조회됨` };
+  }
+  const date = await call('date.do').catch(() => null);
   const sched = date?.dmResSchedule;
   if (sched?.strSchedule === 'Y') {
-    return { status: 'detected', detail: `개설강좌조회기간 개시 (${sched.strBgngYmd} ~)` };
-  }
-  // 게이트가 N이어도 데이터가 먼저 열리는 경우 대비 이중 확인
-  const list = await call('list.do').catch(() => null);
-  if ((list?.dsEstSbjList?.length ?? 0) > 0) {
-    return { status: 'detected', detail: `개설강좌 ${list.dsEstSbjList.length}건 조회됨` };
+    return { status: 'not_detected', detail: '조회기간은 개시됐으나 개설강좌 0건 (등재 대기)' };
   }
   return {
     status: 'not_detected',

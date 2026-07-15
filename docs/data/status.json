@@ -21,11 +21,11 @@
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "gist": {
-    "status": "error",
-    "lastChecked": "2026-07-15T17:36:55.573Z",
-    "detail": null,
-    "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://zeus.gist.ac.kr/sys/lecture/lecture_open.do\", waiting until \"domcontentloaded\"\n",
-    "firstDetectedAt": null
+    "status": "detected",
+    "lastChecked": "2026-07-15T17:31:34.828Z",
+    "detail": "2026-2 대학원 개설강좌 284건 조회됨",
+    "error": null,
+    "firstDetectedAt": "2026-07-15T17:31:34.828Z"
   },
   "konkuk": {
     "status": "not_detected",
@@ -91,11 +91,11 @@
     "firstDetectedAt": null
   },
   "cau": {
-    "status": "not_detected",
-    "lastChecked": "2026-07-15T17:36:55.573Z",
-    "detail": "본문 93자 검사, 키워드 없음",
+    "status": "detected",
+    "lastChecked": "2026-07-15T17:31:34.827Z",
+    "detail": "2026-2 과목명 '학' 검색 1,137건",
     "error": null,
-    "firstDetectedAt": null
+    "firstDetectedAt": "2026-07-15T17:31:34.827Z"
   },
   "ewha": {
     "status": "not_detected",
@@ -210,9 +210,9 @@
     "firstDetectedAt": null
   },
   "jbnu": {
-    "status": "detected",
-    "lastChecked": "2026-07-15T17:36:55.573Z",
-    "detail": "개설강좌조회기간 개시 (undefined ~)",
+    "status": "not_detected",
+    "lastChecked": "2026-07-15T17:31:34.828Z",
+    "detail": "조회기간은 개시됐으나 개설강좌 0건 (등재 대기)",
     "error": null,
     "firstDetectedAt": "2026-07-15T00:04:07.574Z"
   }

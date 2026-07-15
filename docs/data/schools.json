@@ -126,8 +126,8 @@
     "ref261": "2026.02.11 ~ 02.13 (홀/짝 분리, 신·편입 02.27)",
     "period262": "",
     "catalogUrl": "https://cautis.cau.ac.kr/TIS/websquare/websquare.html?w2xPath=/TIS/std/usk/sUskSif004.xml",
-    "notes": "WebSquare 기반 — 렌더링 대기 필요",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "페이지는 조회 폼뿐이라 키워드 불가 — 공개 XML API(selectSbjt.do) 2026/2 과목명 검색 건수로 판정",
+    "check": { "type": "probe" }
   },
   {
     "id": "gist",
@@ -136,8 +136,8 @@
     "ref261": "2026.02.10 ~ 02.13 (신입 02.24~02.25)",
     "period262": "",
     "catalogUrl": "https://zeus.gist.ac.kr/sys/lecture/lecture_open.do",
-    "notes": "",
-    "check": { "type": "keyword" }
+    "notes": "페이지는 조회 폼뿐이라 키워드 불가 — zeus 공개 API(ulsOpenListQ) 2026/2 대학원 조회 건수로 판정",
+    "check": { "type": "probe" }
   },
   {
     "id": "ewha",

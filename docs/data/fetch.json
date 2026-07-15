@@ -28,5 +28,39 @@
       }
     ],
     "logTail": null
+  },
+  "cau": {
+    "ok": true,
+    "fetchedAt": "2026-07-15T17:41:17.151Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 481922,
+    "outputs": [
+      {
+        "path": "data_26_2/cau(2026_2).xlsx",
+        "bytes": 283343,
+        "fresh": true,
+        "rows": 2328
+      }
+    ],
+    "minRows": 950,
+    "logTail": null
+  },
+  "gist": {
+    "ok": true,
+    "fetchedAt": "2026-07-15T17:48:18.498Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 421286,
+    "outputs": [
+      {
+        "path": "data_26_2/gist(2026-2).xlsx",
+        "bytes": 20400,
+        "fresh": true,
+        "rows": 199
+      }
+    ],
+    "minRows": 90,
+    "logTail": null
   }
 }

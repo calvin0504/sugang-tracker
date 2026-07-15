@@ -156,7 +156,9 @@ function renderFetchCell(school) {
   const log = state.fetchLog[school.id];
   switch (st) {
     case 'fetched': {
-      const files = (log.outputs ?? []).map((o) => `${o.path} (${(o.bytes / 1024).toFixed(0)}KB)`).join(', ');
+      const files = (log.outputs ?? [])
+        .map((o) => `${o.path} (${(o.bytes / 1024).toFixed(0)}KB${typeof o.rows === 'number' ? `, ${o.rows.toLocaleString()}행` : ''})`)
+        .join(', ');
       return `<span class="fetch fetched" title="${esc(files)}">📥 수집됨 <span class="fetch-time">${fmtTime(log.fetchedAt)}</span></span>`;
     }
     case 'fetch_failed':
