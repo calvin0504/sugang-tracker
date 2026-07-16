@@ -42,6 +42,13 @@ jobs:
           node scrap_kookmin.mjs 2>&1 | tee out/run-log.txt
         working-directory: actions_fetch
 
+      # 26-2가 0건이면 payload 문제인지 데이터 미등록인지 26-1 대조로 판별
+      - name: Debug run with 2026-1
+        if: failure()
+        run: |
+          KMU_YEAR=2026 KMU_SEM=1 node scrap_kookmin.mjs 2>&1 | tee -a out/run-log.txt || true
+        working-directory: actions_fetch
+
       - name: Commit results
         if: always()
         run: |

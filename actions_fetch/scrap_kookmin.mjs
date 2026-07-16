@@ -12,8 +12,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const currentYear = 2026;
-const currentSemester = 2; // 1 | 2
+// 디버그용 오버라이드: KMU_YEAR/KMU_SEM (예: 26-1 대조 실행으로 payload 정상 여부 확인)
+const currentYear = Number(process.env.KMU_YEAR || 2026);
+const currentSemester = Number(process.env.KMU_SEM || 2); // 1 | 2
 
 const BASE = 'https://sugang.kookmin.ac.kr';
 const REFERER = `${BASE}/front/enrollment/course-catalog`;
@@ -162,6 +163,10 @@ for (const campus of gradCampusList) {
 
   const results = parsed?.lectureRoms?.results || [];
   console.log('[INFO] results =', results.length);
+  if (results.length === 0 && !globalThis.__dumped) {
+    globalThis.__dumped = true;
+    console.log('[DEBUG] body head =', JSON.stringify(parsed).slice(0, 600));
+  }
   if (results.length === 500) {
     console.log('[WARN] 500건 상한 도달 — 이 단과대는 누락 가능성 있음');
   }
