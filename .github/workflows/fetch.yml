@@ -34,11 +34,16 @@ jobs:
         run: npm install
         working-directory: actions_fetch
 
+      # 로그 API는 인증이 필요해 로컬에서 못 읽으므로 실행 로그를 out/에 남겨 함께 커밋한다
       - name: Run kookmin scraper
-        run: node scrap_kookmin.mjs
+        run: |
+          mkdir -p out
+          set -o pipefail
+          node scrap_kookmin.mjs 2>&1 | tee out/run.log
         working-directory: actions_fetch
 
       - name: Commit results
+        if: always()
         run: |
           git config user.name "sugang-bot"
           git config user.email "actions@users.noreply.github.com"
