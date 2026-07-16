@@ -12,14 +12,15 @@
   "kaist": {
     "entry": "node scrap_source/scrap_kaist.js",
     "cwd": ".",
-    "mode": "semi",
-    "ready262": false,
+    "mode": "auto",
+    "ready262": true,
+    "timeoutMin": 10,
     "expectedOutputs": [
       "data_26_2/kaist(2026-2).xlsx"
     ],
     "minRows": 1300,
-    "blockers262": "실행 직전 브라우저에서 erp.kaist.ac.kr 접속해 세션 쿠키(WJSESSIONID 등)를 스크립트에 갱신해야 함 (NetFunnel 대기열). 갱신 후 npm run fetch kaist 로 강제 실행",
-    "notes": "연도 상수는 26-2로 수정 완료. HTTP 방식이라 쿠키만 유효하면 빠름"
+    "blockers262": "",
+    "notes": "2026-07 세션 자동 확보로 전환 — 개설교과목 페이지는 로그인 없이 NetFunnel만 통과하면 접근 가능. Playwright 헤드리스(루트 node_modules)로 JSESSIONID 확보 후 HTTP 조회. 구버전의 수동 쿠키 갱신 불필요"
   },
   "yonsei": {
     "entry": "node scrap_source/scrap_yonsei.js",
