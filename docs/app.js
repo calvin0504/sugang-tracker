@@ -120,20 +120,13 @@ function renderRows() {
     const info = state.status[s.id];
     const meta = STATUS_META[st];
     const why = st === 'error' ? info?.error : st === 'detected' ? info?.detail : '';
-    const d = dday(s.period262);
     const fetchCell = renderFetchCell(s);
+    // notes와 26-1/26-2 기간 열은 당분간 숨김 (schools.json의 notes가 운영 메모 성격이라 노출 부적합)
     return `<tr>
       <td class="idx">${i + 1}</td>
       <td>
         <span class="school-name">${esc(s.name)}<span class="school-code">${esc(s.code)}</span></span>
-        ${s.notes ? `<div class="school-note" title="${esc(s.notes)}">${esc(s.notes)}</div>` : ''}
       </td>
-      <td class="period">${esc(s.ref261) || '<span class="tbd">-</span>'}</td>
-      <td class="period262">${
-        s.period262
-          ? `${esc(s.period262)}${d ? `<span class="dday">${d}</span>` : ''}`
-          : '<span class="tbd">미확정</span>'
-      }</td>
       <td>
         <span class="badge ${st}" title="${esc(why ?? '')}">
           <span class="dot" aria-hidden="true"></span>${meta.label}
@@ -147,7 +140,7 @@ function renderRows() {
   });
 
   document.getElementById('rows').innerHTML =
-    rows.join('') || '<tr class="empty-row"><td colspan="8">조건에 맞는 학교가 없습니다</td></tr>';
+    rows.join('') || '<tr class="empty-row"><td colspan="6">조건에 맞는 학교가 없습니다</td></tr>';
 }
 
 function renderFetchCell(school) {

@@ -38,13 +38,14 @@
     "entry": "node scrap_source/scrap_skku.js",
     "cwd": ".",
     "mode": "semi",
-    "ready262": false,
+    "ready262": true,
     "expectedOutputs": [
       "data_26_2/skku(2026-2).xlsx"
     ],
     "minRows": 550,
-    "blockers262": "사이트 기본 학기가 아직 여름학기(202615) — 스크레이퍼에 학기 콤보 선택(cboYearTerm=202620, 프로브와 동일한 nexacro API 방식) 추가 후 실행해야 2026-2가 수집됨",
-    "notes": "headless:false GUI 필요. Nexacro 순회라 실행 시간 김. checker/probes/skku.mjs에 콤보 구동 방식 참고 코드 있음"
+    "blockers262": "",
+    "notes": "headless:false GUI 필요. Nexacro 순회라 실행 시간 김. 2026-07-16 학기 콤보 선택(cboYearTerm→2026학년도 2학기) 추가 — 기본 학기가 달라도 명시 선택, 미반영 시 중단",
+    "timeoutMin": 90
   },
   "postech": {
     "entry": "node scrap_source/scrap_postech.js",
@@ -263,7 +264,7 @@
     "notes": "3개 후보 중 파싱이 가장 완성된 베이스. WD* ID 하드코딩이라 세션 변경에 취약"
   },
   "pusan": {
-    "entry": "python scrap_psu.py",
+    "entry": "python scrap_psu_his.py",
     "cwd": "refactor_src",
     "mode": "auto",
     "ready262": true,
@@ -272,7 +273,7 @@
     ],
     "minRows": 1000,
     "blockers262": "",
-    "notes": "Python+Selenium. 26-1은 수동 다운로드+변환이었으나 26-2는 이 스크립트로 자동화 전환. 페이지네이션 XPath 취약 — 첫 실행 검증 필요"
+    "notes": "his.pusan.ac.kr 공개 POST 1회 방식(신규, 브라우저 불필요). 구 scrap_psu.py(onestop Selenium)는 onestop 백엔드에 학기 데이터가 늦게 실려 0건 위험 — 폐기 후보"
   },
   "cnu": {
     "entry": null,
