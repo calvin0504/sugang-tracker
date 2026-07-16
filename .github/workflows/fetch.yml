@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p out
           set -o pipefail
-          node scrap_kookmin.mjs 2>&1 | tee out/run.log
+          node scrap_kookmin.mjs 2>&1 | tee out/run-log.txt
         working-directory: actions_fetch
 
       - name: Commit results
