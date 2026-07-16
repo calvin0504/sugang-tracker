@@ -62,5 +62,191 @@
     ],
     "minRows": 90,
     "logTail": null
+  },
+  "postech": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:45:32.014Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 94896,
+    "outputs": [
+      {
+        "path": "data_26_2/postech(2026-2).xlsx",
+        "bytes": 33838,
+        "fresh": true,
+        "rows": 313
+      }
+    ],
+    "minRows": 120,
+    "logTail": null
+  },
+  "ajou": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:45:58.090Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 26017,
+    "outputs": [
+      {
+        "path": "data_26_2/ajou(2026-2).xlsx",
+        "bytes": 79110,
+        "fresh": true,
+        "rows": 664
+      }
+    ],
+    "minRows": 250,
+    "logTail": null
+  },
+  "hufs": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:48:11.912Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 133715,
+    "outputs": [
+      {
+        "path": "data_26_2/hufs(2026-2).xlsx",
+        "bytes": 188778,
+        "fresh": true,
+        "rows": 1901
+      }
+    ],
+    "minRows": 400,
+    "logTail": null
+  },
+  "konkuk": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:48:33.474Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 21530,
+    "outputs": [
+      {
+        "path": "data_26_2/konkuk(2026-2).xlsx",
+        "bytes": 83037,
+        "fresh": true,
+        "rows": 884
+      }
+    ],
+    "minRows": 400,
+    "logTail": null
+  },
+  "hongik": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:51:53.024Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 199490,
+    "outputs": [
+      {
+        "path": "data_26_2/hongik(2026-2).xlsx",
+        "bytes": 78811,
+        "fresh": true,
+        "rows": 1017
+      }
+    ],
+    "minRows": 400,
+    "logTail": null
+  },
+  "pusan": {
+    "ok": false,
+    "fetchedAt": "2026-07-16T05:52:04.229Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 11200,
+    "outputs": [
+      {
+        "path": "data_26_2/pusan(2026-2).xlsx",
+        "bytes": 4784,
+        "fresh": true,
+        "rows": 0
+      }
+    ],
+    "minRows": 1000,
+    "logTail": ""
+  },
+  "ssu": {
+    "ok": false,
+    "fetchedAt": "2026-07-16T05:55:03.173Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 178933,
+    "outputs": [
+      {
+        "path": "data_26_2/ssu(2026-2).xlsx",
+        "bytes": 10943,
+        "fresh": true,
+        "rows": 43
+      }
+    ],
+    "minRows": 200,
+    "logTail": "ound no strong result table [\n  {\n    t: {},\n    score: 1352,\n    trCount: 2,\n    maxCols: 15,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1077,\n    trCount: 2,\n    maxCols: 1,\n    head: '엑스포트 계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1071,\n    trCount: 1,\n    maxCols: 1,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  }\n]\n[SET] dropdown[2]:  교육대학원\n[WARN] 교육대학원: result table not found no strong result table [\n  {\n    t: {},\n    score: 1352,\n    trCount: 2,\n    maxCols: 15,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1077,\n    trCount: 2,\n    maxCols: 1,\n    head: '엑스포트 계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1071,\n    trCount: 1,\n    maxCols: 1,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  }\n]\n[SET] dropdown[2]:  기독교학대학원\n[기독교학대학원] rows = 14\n\n✅ saved: C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\data_26_2\\ssu(2026-2).xlsx\n"
+  },
+  "kookmin": {
+    "ok": false,
+    "fetchedAt": "2026-07-16T05:55:44.381Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 41207,
+    "outputs": [
+      {
+        "path": "data_26_2/kookmin(2026-2).xlsx",
+        "bytes": 0,
+        "fresh": false
+      }
+    ],
+    "minRows": 350,
+    "logTail": "[START] KMU crawl\n[1/4] commoncodes/all 요청\nError: net::ERR_CONNECTION_TIMED_OUT at https://sugang.kookmin.ac.kr/api/subject/public/commoncodes/all\n    at navigate (C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\cdp\\Frame.js:170:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async Deferred.race (C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\util\\Deferred.js:31:20)\n    at async CdpFrame.goto (C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\cdp\\Frame.js:136:25)\n    at async CdpPage.goto (C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\api\\Page.js:603:20)\n    at async C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\scrap_source\\scrap_kookmin.js:41:5\n"
+  },
+  "sookmyung": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:59:18.836Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 214403,
+    "outputs": [
+      {
+        "path": "data_26_2/smwu(2026-2).xlsx",
+        "bytes": 68809,
+        "fresh": true,
+        "rows": 575
+      }
+    ],
+    "minRows": 230,
+    "logTail": null
+  },
+  "sungshin": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T05:59:37.330Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 18477,
+    "outputs": [
+      {
+        "path": "data_26_2/sungshin(2026-2).xlsx",
+        "bytes": 36453,
+        "fresh": true,
+        "rows": 466
+      }
+    ],
+    "minRows": 170,
+    "logTail": null
+  },
+  "knu": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T06:06:19.525Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 402113,
+    "outputs": [
+      {
+        "path": "data_26_2/kyungpook(2026-2).xlsx",
+        "bytes": 128980,
+        "fresh": true,
+        "rows": 1951
+      }
+    ],
+    "minRows": 800,
+    "logTail": null
   }
 }
