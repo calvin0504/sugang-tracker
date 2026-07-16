@@ -324,8 +324,8 @@
       "data_26_2/kookmin(2026-2).xlsx"
     ],
     "minRows": 350,
-    "blockers262": "",
-    "notes": "공개 API 기반. 단과대별 500과목 초과 시 누락 가능성 유의"
+    "blockers262": "26-2 강의 데이터 미등록 (서버 개방·공통코드 존재, 26-1은 586행 수집 확인) — 등록 시 매일 06:30 KST cron이 자동 수집",
+    "notes": "공개 API 기반. 단과대별 500과목 초과 시 누락 가능성 유의. 로컬 IP는 방화벽 차단 → GitHub Actions(fetch-courses, actions_fetch/scrap_kookmin.mjs)에서 수집, 산출물은 actions_fetch/out/에 커밋됨 → data_26_2로 이동 필요"
   },
   "sookmyung": {
     "entry": "node scrap_source/scrap_sookmyung.js",

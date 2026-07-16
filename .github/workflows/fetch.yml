@@ -4,8 +4,11 @@ name: fetch-courses
 # SchoolCourse는 비공개 별도 저장소라 체크아웃할 수 없으므로 actions_fetch/의
 # 자체완결 스크립트를 사용하고, 산출물 xlsx는 actions_fetch/out/에 커밋해
 # 로컬에서 SchoolCourse/data_26_2로 옮긴다.
+# 26-2 강의 데이터가 등록되면 수집이 성공하도록 매일 1회 재시도한다.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 21 * * *' # 매일 06:30 KST
   push:
     branches: [main]
     paths:
@@ -34,19 +37,13 @@ jobs:
         run: npm install
         working-directory: actions_fetch
 
-      # 로그 API는 인증이 필요해 로컬에서 못 읽으므로 실행 로그를 out/에 남겨 함께 커밋한다
+      # 로그 API는 인증이 필요해 로컬에서 못 읽으므로 실행 로그를 out/에 남겨 함께 커밋한다.
+      # --no-warnings: 로그에 PID가 섞여 실패 반복 시 무의미한 커밋이 생기는 것 방지
       - name: Run kookmin scraper
         run: |
           mkdir -p out
           set -o pipefail
-          node scrap_kookmin.mjs 2>&1 | tee out/run-log.txt
-        working-directory: actions_fetch
-
-      # 26-2가 0건이면 payload 문제인지 데이터 미등록인지 26-1 대조로 판별
-      - name: Debug run with 2026-1
-        if: failure()
-        run: |
-          KMU_YEAR=2026 KMU_SEM=1 node scrap_kookmin.mjs 2>&1 | tee -a out/run-log.txt || true
+          node --no-warnings scrap_kookmin.mjs 2>&1 | tee out/run-log.txt
         working-directory: actions_fetch
 
       - name: Commit results
