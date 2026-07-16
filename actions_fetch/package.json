@@ -1,0 +1,9 @@
+{
+  "name": "actions-fetch",
+  "private": true,
+  "type": "module",
+  "description": "로컬 IP가 방화벽에 막히는 학교(kookmin)를 GitHub Actions 러너에서 수집하기 위한 자체완결 스크립트. 산출물은 out/에 커밋되고 로컬에서 SchoolCourse/data_26_2로 옮긴다.",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

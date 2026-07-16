@@ -1,18 +1,16 @@
 name: fetch-courses
 
-# 로컬 IP가 학교 방화벽에 막히는 곳(kookmin 등)을 Actions 러너에서 수집한다.
-# 수동 실행(workflow_dispatch) 또는 이 파일 push 시 1회 실행.
+# 로컬 IP가 학교 방화벽에 막히는 곳(kookmin)을 Actions 러너에서 수집한다.
+# SchoolCourse는 비공개 별도 저장소라 체크아웃할 수 없으므로 actions_fetch/의
+# 자체완결 스크립트를 사용하고, 산출물 xlsx는 actions_fetch/out/에 커밋해
+# 로컬에서 SchoolCourse/data_26_2로 옮긴다.
 on:
   workflow_dispatch:
-    inputs:
-      schools:
-        description: '수집할 학교 id (공백 구분, 예: kookmin ssu)'
-        required: false
-        default: 'kookmin'
   push:
     branches: [main]
     paths:
       - '.github/workflows/fetch.yml'
+      - 'actions_fetch/**'
 
 permissions:
   contents: write
@@ -24,35 +22,29 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Install checker dependencies
+      - name: Install dependencies
         run: npm install
+        working-directory: actions_fetch
 
-      - name: Install scraper dependencies (puppeteer 포함)
-        run: npm install
-        working-directory: SchoolCourse
-
-      - name: Install Chrome system libraries
-        run: npx playwright install-deps chromium
-
-      # 스크레이퍼들이 headless:false 로 브라우저를 띄우므로 xvfb 가상 디스플레이 필요
-      - name: Run fetch
-        run: xvfb-run -a node checker/fetch.mjs ${{ inputs.schools || 'kookmin' }}
+      - name: Run kookmin scraper
+        run: node scrap_kookmin.mjs
+        working-directory: actions_fetch
 
       - name: Commit results
         run: |
           git config user.name "sugang-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/data/fetch.json SchoolCourse/data_26_2
+          git add actions_fetch/out
           if ! git diff --cached --quiet; then
-            git commit -m "feat: actions fetch (${{ inputs.schools || 'kookmin' }}) $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "feat: actions fetch kookmin $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push
           fi
