@@ -1,0 +1,58 @@
+name: fetch-courses
+
+# 로컬 IP가 학교 방화벽에 막히는 곳(kookmin 등)을 Actions 러너에서 수집한다.
+# 수동 실행(workflow_dispatch) 또는 이 파일 push 시 1회 실행.
+on:
+  workflow_dispatch:
+    inputs:
+      schools:
+        description: '수집할 학교 id (공백 구분, 예: kookmin ssu)'
+        required: false
+        default: 'kookmin'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fetch.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-courses
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install checker dependencies
+        run: npm install
+
+      - name: Install scraper dependencies (puppeteer 포함)
+        run: npm install
+        working-directory: SchoolCourse
+
+      - name: Install Chrome system libraries
+        run: npx playwright install-deps chromium
+
+      # 스크레이퍼들이 headless:false 로 브라우저를 띄우므로 xvfb 가상 디스플레이 필요
+      - name: Run fetch
+        run: xvfb-run -a node checker/fetch.mjs ${{ inputs.schools || 'kookmin' }}
+
+      - name: Commit results
+        run: |
+          git config user.name "sugang-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/fetch.json SchoolCourse/data_26_2
+          if ! git diff --cached --quiet; then
+            git commit -m "feat: actions fetch (${{ inputs.schools || 'kookmin' }}) $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git pull --rebase origin main
+            git push
+          fi
