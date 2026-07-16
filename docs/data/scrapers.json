@@ -252,16 +252,17 @@
     "notes": "첫 실행 시 봇 챌린지를 GUI 창에서 1회 수동 통과(이후 쿠키 캐시 재사용). 페이지 연도는 기본값 의존"
   },
   "sogang": {
-    "entry": "python scrap_sogang.py",
-    "cwd": "refactor_src",
-    "mode": "semi",
-    "ready262": false,
+    "entry": "node scrap_source/scrap_sogang.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "timeoutMin": 20,
     "expectedOutputs": [
       "data_26_2/sogang(2026-2).xlsx"
     ],
     "minRows": 160,
-    "blockers262": "연도/학기 선택 코드가 전부 주석 처리돼 사이트 기본 학기를 긁음 — 서강대 26-2 편람 공개 후 선택 로직 복원+실동작 검증 필요. 출력 파일명도 교정 필요",
-    "notes": "3개 후보 중 파싱이 가장 완성된 베이스. WD* ID 하드코딩이라 세션 변경에 취약"
+    "blockers262": "",
+    "notes": "2026-07 신규 JS(Playwright 헤드리스, 루트 node_modules 사용). 연도/학기 명시 선택+행 단위 검증, 대학원 12곳 순회. 구 refactor_src/scrap_sogang.py는 학기 선택 주석 처리+WD* ID 하드코딩이라 폐기 후보"
   },
   "pusan": {
     "entry": "python scrap_psu_his.py",

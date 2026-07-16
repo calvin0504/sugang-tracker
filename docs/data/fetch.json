@@ -265,5 +265,22 @@
     ],
     "minRows": 550,
     "logTail": null
+  },
+  "sogang": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T15:05:22.711Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 142575,
+    "outputs": [
+      {
+        "path": "data_26_2/sogang(2026-2).xlsx",
+        "bytes": 23033,
+        "fresh": true,
+        "rows": 230
+      }
+    ],
+    "minRows": 160,
+    "logTail": null
   }
 }
