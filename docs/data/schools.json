@@ -7,7 +7,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "찬우님 엑셀파일 보유",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "kaist",
@@ -17,7 +19,9 @@
     "period262": "",
     "catalogUrl": "https://otl.kaist.ac.kr/",
     "notes": "감지는 OTL 공개 API(가을=semester 3). 수집용 erp 편람은 로그인 필요: erp.kaist.ac.kr estblSubjt. 26-1 기준 불필요 조직 제거 필요",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "yonsei",
@@ -27,7 +31,9 @@
     "period262": "",
     "catalogUrl": "https://underwood1.yonsei.ac.kr/com/lgin/SsoCtr/initExtPageWork.do?link=handbList&locale=ko",
     "notes": "",
-    "check": { "type": "keyword" }
+    "check": {
+      "type": "keyword"
+    }
   },
   {
     "id": "skku",
@@ -37,7 +43,9 @@
     "period262": "",
     "catalogUrl": "https://kingoinfo.skku.edu/gaia/nxui/outdex.html?language=KO&menuId=NHSSU030840M",
     "notes": "Nexacro 앱 — 메뉴 클릭 후 학기 콤보 XHR로 판정 (키워드 불가)",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "postech",
@@ -46,8 +54,10 @@
     "ref261": "(전년도 12월) 2025.12.01 ~ 12.09",
     "period262": "",
     "catalogUrl": "https://plms.postech.ac.kr/local/ubion/course/lists.php",
-    "notes": "학기 시작 전 이르게 진행 — 2학기는 6월경부터 주시 필요",
-    "check": { "type": "keyword" }
+    "notes": "조회 폼이라 키워드 불가 — lists.php GET(year=2026&semester=20) '전체 갯수'로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "korea",
@@ -57,7 +67,9 @@
     "period262": "",
     "catalogUrl": "https://sugang.korea.ac.kr/p/v/lectList?lang=ko",
     "notes": "공개 과목조회 API로 대학원(0309) 2026-2 조회 가능 여부 판정. /graduate/는 수강신청 기간 외 폐쇄",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "unist",
@@ -67,7 +79,9 @@
     "period262": "",
     "catalogUrl": "https://uspap5.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko#",
     "notes": "학기 사이엔 SAP 서버 방화벽 폐쇄 — 서버 3대(uspap5/uspap3/uspdbsvc) 순차 프로브, 재개 자체가 임박 신호 (8월 초 예상)",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "hanyang",
@@ -76,8 +90,10 @@
     "ref261": "2026.02.09 ~ 02.13 (신·편입 02.27~03.03)",
     "period262": "",
     "catalogUrl": "https://portal.hanyang.ac.kr/sugang/sulg.do#!UDMxMDI3OCRAXnN1Z2FuZy8kQF4wJEBeTTAwNjYzMSRAXuyImOqwle2OuOuejCRAXk0wMDY2MzEkQF5lOTA2ODU5ODUyNGUwMDRhNGFmNmQ5NmQzNDQxMGZhNTY3MDVlNzZiYjJmN2ZjMmRmMzU3Mjk0NzFiMGYzYjQ1IA==",
-    "notes": "26-1 기준: 대학원·경영전문대학원·국제대학원 3개만 유지, 나머지 제거",
-    "check": { "type": "keyword" }
+    "notes": "포털 SPA라 키워드 불가 — 온로드 findSgscCurYtJojik.do 응답의 현재 편람 학기(2026/20 전환)로 판정. tk 토큰 만료 시 catalogUrl 갱신 필요",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "khu",
@@ -87,7 +103,9 @@
     "period262": "",
     "catalogUrl": "https://sugang.khu.ac.kr/",
     "notes": "26-1 기준 유지 대학원: 관광·교육·대학원·아트퓨전디자인·체육·테크노경영 (이외 제거)",
-    "check": { "type": "keyword" }
+    "check": {
+      "type": "keyword"
+    }
   },
   {
     "id": "sejong",
@@ -97,7 +115,9 @@
     "period262": "",
     "catalogUrl": "https://sjpt.sejong.ac.kr/app/ext/SueOpenTimeQ.jsp",
     "notes": "",
-    "check": { "type": "keyword" }
+    "check": {
+      "type": "keyword"
+    }
   },
   {
     "id": "dgist",
@@ -107,7 +127,9 @@
     "period262": "",
     "catalogUrl": "https://welcome.dgist.ac.kr/ucs/ucsqProfRespSbjtInq/index.do#",
     "notes": "",
-    "check": { "type": "keyword" }
+    "check": {
+      "type": "keyword"
+    }
   },
   {
     "id": "ajou",
@@ -116,8 +138,10 @@
     "ref261": "2026.02.09 ~ 02.13 (예비 01.22~01.24)",
     "period262": "",
     "catalogUrl": "https://mhaksa.ajou.ac.kr:30443/public.html#!/e020402",
-    "notes": "목록이 '전체' 선택 시에만 보임",
-    "check": { "type": "keyword", "waitMs": 10000 }
+    "notes": "AngularJS SPA라 키워드 불가 — 페이지 세션 하 cvt.do API(U0002003=2학기) 건수로 판정. 대학원만",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "cau",
@@ -127,7 +151,9 @@
     "period262": "",
     "catalogUrl": "https://cautis.cau.ac.kr/TIS/websquare/websquare.html?w2xPath=/TIS/std/usk/sUskSif004.xml",
     "notes": "페이지는 조회 폼뿐이라 키워드 불가 — 공개 XML API(selectSbjt.do) 2026/2 과목명 검색 건수로 판정",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "gist",
@@ -137,7 +163,9 @@
     "period262": "",
     "catalogUrl": "https://zeus.gist.ac.kr/sys/lecture/lecture_open.do",
     "notes": "페이지는 조회 폼뿐이라 키워드 불가 — zeus 공개 API(ulsOpenListQ) 2026/2 대학원 조회 건수로 판정",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "ewha",
@@ -146,8 +174,10 @@
     "ref261": "(재학생) 2026.02.05 시작, 장바구니 02.02~02.04",
     "period262": "",
     "catalogUrl": "https://eureka.ewha.ac.kr/eureka/my/public.do?pgId=P531005521",
-    "notes": "신입생 02.19~02.20 등 세부 슬롯 존재",
-    "check": { "type": "keyword" }
+    "notes": "Nexacro(XPLATFORM)라 키워드 불가+직접HTTP 빈응답 — 폼 JS 구동(cbbUnivCd 세팅→조회 발사→dsGrid 건수). 과거학기 미서빙이라 컨트롤 불가, 대신 요청조건(2026/20) 검증",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "kau",
@@ -157,7 +187,14 @@
     "period262": "",
     "catalogUrl": "https://sugang.kau.ac.kr/sugang/index.su",
     "notes": "타입 생성 필요. 구 su.kau.ac.kr 도메인 폐기 → sugang.kau.ac.kr. 로그인 페이지의 공지 제목으로 감지",
-    "check": { "type": "keyword", "any": ["2026학년도 2학기", "2026-2", "2학기 수강신청"] }
+    "check": {
+      "type": "keyword",
+      "any": [
+        "2026학년도 2학기",
+        "2026-2",
+        "2학기 수강신청"
+      ]
+    }
   },
   {
     "id": "hufs",
@@ -166,8 +203,10 @@
     "ref261": "(학년별) 4학년 02.09 → 전학년 02.24",
     "period262": "",
     "catalogUrl": "https://wis.hufs.ac.kr/src08/jsp/lecture/LECTURE2020L.jsp",
-    "notes": "사전수강신청(정원 내 확정) + 선착순 구조",
-    "check": { "type": "keyword" }
+    "notes": "조회 폼이라 키워드 불가 — /hufs getDataLssnLista(대학원 B/AI융합학과, sessn=3) dataCount로 판정. 사전수강신청(정원 내 확정) + 선착순 구조",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "uos",
@@ -177,7 +216,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "편람 링크 미확보",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "kmu",
@@ -186,8 +227,10 @@
     "ref261": "02.02 ~ 02.05",
     "period262": "",
     "catalogUrl": "https://edward.kmu.ac.kr/nx/index_external.html?bWVudUlkPU01MDU3MDQ=",
-    "notes": "타입 생성 필요. Nexacro 기반",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "Nexacro라 키워드 불가+API 세션토큰 필요 — UI 구동식 프로브(btn_search 클릭→findOpenLtCtntInqList 가로채기, 기본학기 2026/2 확인+건수 판정)",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "konkuk",
@@ -196,8 +239,10 @@
     "ref261": "(학년별) 2026.02.10 ~ 02.19, 전학년 02.23~02.24",
     "period262": "",
     "catalogUrl": "https://sugang.konkuk.ac.kr/sugang/jsp/search/searchMainOuter.jsp",
-    "notes": "수강바구니 2/2~2/3, 2/5~2/6. 26-1 편람은 1/30 공개였음",
-    "check": { "type": "keyword" }
+    "notes": "페이지는 조회 폼뿐이라 키워드 불가 — find.do API 2026/B01012(2학기) 조회 건수로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "dongguk",
@@ -206,8 +251,10 @@
     "ref261": "(서울캠) 2026.02.02 ~ 02.06 (WISE 02.09~02.11)",
     "period262": "",
     "catalogUrl": "https://nextsupport.dongguk.edu/unis/index.do?t=5544673155325A4E55573178523352595A32517A64464673627A6C70647A3039",
-    "notes": "",
-    "check": { "type": "keyword" }
+    "notes": "세션 토큰 필요해 UI 구동식 프로브 — 조회 클릭 후 doList.do 응답 가로채 기반학기(2026/CM160.20) 확인+건수 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "hongik",
@@ -216,8 +263,10 @@
     "ref261": "공식 미확정 (비공식 02.23~02.26, 검증 필요)",
     "period262": "",
     "catalogUrl": "https://cn.hongik.ac.kr/grad/ex/timetable.jsp",
-    "notes": "공식 학사일정 페이지 신뢰도 낮음(오류 텍스트)",
-    "check": { "type": "keyword" }
+    "notes": "페이지는 조회 폼뿐이라 키워드 불가 — timetable.jsp POST(2026/2, 대학원 col=1/major=887) td 수로 판정. 공식 학사일정 페이지 신뢰도 낮음(오류 텍스트)",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "sogang",
@@ -226,8 +275,10 @@
     "ref261": "담아놓기 02.04~05 / 신청 02.11(2·3학년), 02.12(4학년), 02.21(신입)",
     "period262": "",
     "catalogUrl": "https://sis109.sogang.ac.kr/sap/bc/webdynpro/sap/zcmw9016?sap-language=KO#",
-    "notes": "SAP WebDynpro. 수업 0개 대학원 목록 제거 필요(경영전문·공공정책·교육·경제·미디어커뮤니케이션·신학·가상융합전문·법학전문 이외)",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "SAP WebDynpro라 키워드 불가 — UI 구동식 프로브(학기 콤보→2학기, 소속구분→대학, 검색→그리드 판정). 수업 0개 대학원 목록 제거 필요(경영전문·공공정책·교육·경제·미디어커뮤니케이션·신학·가상융합전문·법학전문 이외)",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "pusan",
@@ -236,8 +287,10 @@
     "ref261": "(1차) 2026.02.09 ~ 02.11 (신입 02.12~13, 추가 02.19~20)",
     "period262": "",
     "catalogUrl": "https://his.pusan.ac.kr/style-guide/19813/subview.do",
-    "notes": "대상에 따라 차수 갈릴 수 있음",
-    "check": { "type": "keyword" }
+    "notes": "조회 폼이라 키워드 불가 — resultViewBySesdb.do POST(findTerm=0020, 대학원) 행 수로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "cnu",
@@ -247,7 +300,9 @@
     "period262": "",
     "catalogUrl": "https://cnuit.cnu.ac.kr/checkMenu.jsp?p0=M69r16057e79Y231",
     "notes": "sugang.cnu.ac.kr 로그인 페이지의 '수강편람' 공개 메뉴. 학기 콤보를 2학기로 바꿔 조회 건수로 판정",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "cbnu",
@@ -257,7 +312,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "타입 생성 필요. 편람 링크 미확보",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "kw",
@@ -267,7 +324,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "타입 생성 필요. 편람 링크 미확보",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "ssu",
@@ -276,8 +335,10 @@
     "ref261": "(4학년) 02.19 / (학년별·전체) 02.23 ~ 02.26",
     "period262": "",
     "catalogUrl": "https://ecc.ssu.ac.kr/sap/bc/webdynpro/sap/zcmw2100?sap-language=KO#",
-    "notes": "SAP WebDynpro",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "SAP WebDynpro라 키워드 불가 — UI 구동식 프로브(다음학기→2학기, 과목검색 '연구'→그리드 판정)",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "kookmin",
@@ -287,7 +348,9 @@
     "period262": "",
     "catalogUrl": "https://sugang.kookmin.ac.kr/front/enrollment/course-catalog",
     "notes": "운영기간 외 서버 방화벽 폐쇄 — 공개 API 응답 재개가 임박 신호 (8월 초 예상). 대학원 02.20, 신·편입 02.25",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "sookmyung",
@@ -296,8 +359,10 @@
     "ref261": "1차 02.05 ~ 02.09 (다단계, 개강 후 3차 03.03~03.09)",
     "period262": "",
     "catalogUrl": "https://smap.sookmyung.ac.kr:8443/sap/bc/webdynpro/sap/zcmw2237?sap-language=KO#",
-    "notes": "SAP WebDynpro",
-    "check": { "type": "keyword", "waitMs": 12000 }
+    "notes": "SAP WebDynpro라 키워드 불가 — 기본 검색기간(2026/2학기) 확인 후 검색 클릭, 결과 그리드 렌더링 여부로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "sungshin",
@@ -306,8 +371,10 @@
     "ref261": "02.11 ~ 02.13 (관심강좌 01.28~02.03)",
     "period262": "",
     "catalogUrl": "https://sugang.sungshin.ac.kr/findBCRM02010.do",
-    "notes": "",
-    "check": { "type": "keyword" }
+    "notes": "조회 폼이라 키워드 불가 — findBCRM02010Main.do 직접 호출(학기코드 COMM063.20, req/res-protocol 헤더 필수) 건수로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "inha",
@@ -316,8 +383,10 @@
     "ref261": "02.09 ~ 02.11 (공지 제목 기준)",
     "period262": "",
     "catalogUrl": "https://ins2.inha.ac.kr/ITIS/STD/SUG/SUG51001/LecTimeListGrd.aspx?strGrdGb=02&strDept=0092",
-    "notes": "26-1 당시 공지 페이지 502 오류로 제목으로만 확인",
-    "check": { "type": "keyword" }
+    "notes": "WebForms 그리드라 키워드 불가 — UI 구동(ddlYearterm=20262→조회) 본문 크기로 판정",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "knu",
@@ -326,8 +395,10 @@
     "ref261": "02.10 ~ 02.12",
     "period262": "",
     "catalogUrl": "https://knuin.knu.ac.kr/public/stddm/lectPlnInqr.knu",
-    "notes": "학사력 PDF에 명시",
-    "check": { "type": "keyword" }
+    "notes": "페이지는 조회 폼뿐이라 키워드 불가 — selectListLectPlnInqr API 2026/CMBS001400002(2학기) 건수로 판정. 학사력 PDF에 명시",
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "mju",
@@ -337,7 +408,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "편람 링크 미확보",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "seoultech",
@@ -347,7 +420,9 @@
     "period262": "",
     "catalogUrl": "",
     "notes": "편람 링크 미확보",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   },
   {
     "id": "kdi",
@@ -357,7 +432,13 @@
     "period262": "",
     "catalogUrl": "https://www.kdischool.ac.kr/board.es?mid=a20202020000&bid=0021",
     "notes": "단과대 선택 0개 — 제거 검토",
-    "check": { "type": "keyword", "any": ["Fall Semester Course Registration", "2026학년도 2학기"] }
+    "check": {
+      "type": "keyword",
+      "any": [
+        "Fall Semester Course Registration",
+        "2026학년도 2학기"
+      ]
+    }
   },
   {
     "id": "jbnu",
@@ -367,7 +448,9 @@
     "period262": "",
     "catalogUrl": "https://jump.jbnu.ac.kr/link?div=sucrPlan",
     "notes": "타입 생성 필요. 구 oasis 폐쇄 → JUMP 포털. 공개 API로 개설강좌조회기간(2026-07-15 09:00 시작 예정) 판정. 수집 스크레이퍼(scrap_jbnu.js)는 oasis 기반이라 JUMP 대응 재작성 필요",
-    "check": { "type": "probe" }
+    "check": {
+      "type": "probe"
+    }
   },
   {
     "id": "donga",
@@ -377,6 +460,8 @@
     "period262": "",
     "catalogUrl": "https://www.donga.ac.kr/kor/CMS/TotalSearch/total.do?mCode=MN239&searchKeyword=학사일정",
     "notes": "타입 생성 필요. 포털 로그인 필요 → 자동 체크 제외",
-    "check": { "type": "manual" }
+    "check": {
+      "type": "manual"
+    }
   }
 ]

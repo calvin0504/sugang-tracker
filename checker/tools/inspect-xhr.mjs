@@ -3,7 +3,7 @@
 import { chromium } from 'playwright';
 import { readFile } from 'node:fs/promises';
 
-const schools = JSON.parse(await readFile(new URL('../docs/data/schools.json', import.meta.url), 'utf8'));
+const schools = JSON.parse(await readFile(new URL('../../docs/data/schools.json', import.meta.url), 'utf8'));
 const school = schools.find((s) => s.id === process.argv[2]);
 if (!school) { console.error('unknown id'); process.exit(1); }
 
