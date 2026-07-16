@@ -299,5 +299,56 @@
     ],
     "minRows": 1300,
     "logTail": null
+  },
+  "dongguk": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T23:52:51.538Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 19153,
+    "outputs": [
+      {
+        "path": "data_26_2/dongguk(2026-2).xlsx",
+        "bytes": 125799,
+        "fresh": true,
+        "rows": 1131
+      }
+    ],
+    "minRows": 600,
+    "logTail": null
+  },
+  "cnu": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T23:54:19.180Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 87556,
+    "outputs": [
+      {
+        "path": "data_26_2/cnu(2026-2).xlsx",
+        "bytes": 100688,
+        "fresh": true,
+        "rows": 1293
+      }
+    ],
+    "minRows": 700,
+    "logTail": null
+  },
+  "kmu": {
+    "ok": true,
+    "fetchedAt": "2026-07-16T23:54:48.778Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 29576,
+    "outputs": [
+      {
+        "path": "data_26_2/kmu(2026-2).xlsx",
+        "bytes": 38976,
+        "fresh": true,
+        "rows": 416
+      }
+    ],
+    "minRows": 250,
+    "logTail": null
   }
 }
