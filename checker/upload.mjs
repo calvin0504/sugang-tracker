@@ -5,13 +5,19 @@
 // 해시는 파일 바이트가 아니라 시트 셀 값 기준 — exceljs가 저장 때마다 zip 메타데이터를
 // 바꾸므로 파일 해시로는 재수집=재전송이 돼버린다.
 //
-// 사용법:
-//   node checker/upload.mjs            # 변경 감지 → 전송 (UPLOAD_API_URL/KEY 필요)
-//   node checker/upload.mjs --dry      # 전송 없이 변경된 학교만 출력
-//   node checker/upload.mjs --dry snu  # 지정 학교만
+// 서버 API: BulkSchoolCourseV2Controller
+//   POST {UPLOAD_API_URL}?type=&academyYear=&semester=&dryRun=&closeMissing=
+//   multipart part "file" = xlsx. 응답: BulkSchoolCourseV2ReportDto(JSON).
+//   type은 학교별 파서 키 — 기본은 학교 id, scrapers.json의 uploadType으로 재정의 가능.
 //
-// 서버 API 스펙(엔드포인트/인증/multipart 필드)은 sendOne()에 채운다 — 스펙 확정 전까지
-// 전송 시도는 명확한 에러로 중단된다.
+// 사용법:
+//   node checker/upload.mjs              # 변경 감지 → 전송 (UPLOAD_API_URL 필요)
+//   node checker/upload.mjs --dry        # 전송 없이 변경된 학교만 출력
+//   node checker/upload.mjs --server-dry # 서버에 dryRun=true로 전송(DB 반영 없이 파싱 검증)
+//   node checker/upload.mjs --no-close-missing  # 누락 강좌 폐강 처리 끄기
+//   node checker/upload.mjs --dry snu    # 지정 학교만
+//
+// 환경변수: UPLOAD_API_URL(엔드포인트 전체 URL, 필수), UPLOAD_API_KEY(선택 — Bearer 헤더)
 import { createHash } from 'node:crypto';
 import { readFile, writeFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -26,7 +32,12 @@ const SCHOOLCOURSE_DIR = path.join(ROOT, 'SchoolCourse');
 
 const argv = process.argv.slice(2);
 const dryRun = argv.includes('--dry');
+const serverDry = argv.includes('--server-dry');
+const closeMissing = !argv.includes('--no-close-missing');
 const pickedIds = argv.filter((a) => !a.startsWith('--'));
+
+const ACADEMY_YEAR = 2026;
+const SEMESTER = '2';
 
 const ExcelJS = createRequire(path.join(SCHOOLCOURSE_DIR, 'package.json'))('exceljs');
 
@@ -53,28 +64,29 @@ async function contentHash(file) {
   return { hash: hash.digest('hex'), rows };
 }
 
-// ===== 서버 API 전송 — 스펙 확정 시 여기만 채우면 됨 =====
-async function sendOne(id, filePath, meta) {
-  const url = process.env.UPLOAD_API_URL;
+// ===== 서버 API 전송 (BulkSchoolCourseV2Controller /action/upload) =====
+async function sendOne(id, filePath) {
+  const base = process.env.UPLOAD_API_URL;
   const key = process.env.UPLOAD_API_KEY;
-  if (!url) {
-    throw new Error(
-      'UPLOAD_API_URL 미설정 — 서버 API 스펙(엔드포인트/인증/필드) 확정 후 sendOne()을 완성하세요',
-    );
+  if (!base) {
+    throw new Error('UPLOAD_API_URL 미설정 (예: https://<host>/api/v1/bulk/school-course/v2/action/upload)');
   }
+  const url = new URL(base);
+  url.searchParams.set('type', scrapers[id]?.uploadType ?? id);
+  url.searchParams.set('academyYear', String(ACADEMY_YEAR));
+  url.searchParams.set('semester', SEMESTER);
+  url.searchParams.set('dryRun', String(serverDry));
+  url.searchParams.set('closeMissing', String(closeMissing));
+
   const form = new FormData();
-  // TODO(스펙 확정 필요): 파일 필드명·파라미터 이름을 실제 API에 맞출 것
   form.append('file', new Blob([await readFile(filePath)]), path.basename(filePath));
-  form.append('school', id);
-  form.append('year', '2026');
-  form.append('semester', '2');
   const res = await fetch(url, {
     method: 'POST',
     headers: key ? { Authorization: `Bearer ${key}` } : {},
     body: form,
-    signal: AbortSignal.timeout(120000),
+    signal: AbortSignal.timeout(300000), // 대용량 파싱 대기
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
   return res.json().catch(() => ({}));
 }
 
@@ -120,10 +132,15 @@ for (const id of targets) {
       continue;
     }
     try {
-      await sendOne(id, file, { rows });
-      uploadLog[id] = { hash, rows, file: rel, sentAt: new Date().toISOString() };
-      await writeFile(UPLOAD_PATH, `${JSON.stringify(uploadLog, null, 2)}\n`);
-      console.log(`✔ [${id}] 전송 완료 — ${diffNote}`);
+      const report = await sendOne(id, file);
+      if (serverDry) {
+        // 서버 dryRun은 DB 반영이 없으므로 전송 기록을 남기지 않는다
+        console.log(`✔ [${id}] 서버 dryRun 통과 — ${diffNote} | report: ${JSON.stringify(report).slice(0, 200)}`);
+      } else {
+        uploadLog[id] = { hash, rows, file: rel, sentAt: new Date().toISOString() };
+        await writeFile(UPLOAD_PATH, `${JSON.stringify(uploadLog, null, 2)}\n`);
+        console.log(`✔ [${id}] 전송 완료 — ${diffNote} | report: ${JSON.stringify(report).slice(0, 200)}`);
+      }
     } catch (e) {
       failed += 1;
       console.log(`✘ [${id}] 전송 실패: ${e.message}`);
