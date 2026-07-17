@@ -25,6 +25,15 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
+
+// 루트 .env 로드 (KEY=VALUE, 기존 환경변수 우선) — 토큰을 저장소 밖에 두기 위한 로컬 파일
+try {
+  const envRaw = await readFile(path.join(ROOT, '.env'), 'utf8');
+  for (const line of envRaw.split(/\r?\n/)) {
+    const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/.exec(line);
+    if (m && !(m[1] in process.env) && m[2]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+} catch {}
 const SCRAPERS_PATH = path.join(ROOT, 'docs', 'data', 'scrapers.json');
 const FETCH_PATH = path.join(ROOT, 'docs', 'data', 'fetch.json');
 const UPLOAD_PATH = path.join(ROOT, 'docs', 'data', 'upload.json');

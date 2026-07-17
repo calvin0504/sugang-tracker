@@ -118,5 +118,19 @@
     "rows": 1951,
     "file": "data_26_2/kyungpook(2026-2).xlsx",
     "sentAt": "2026-07-17T13:31:18.300Z"
+  },
+  "snu": {
+    "hash": "79845776dac130b89e77cff7ab5af73e1c4e2bc72eb5eeb7dd33e6a1341dd701",
+    "rows": 4646,
+    "file": "data_26_2/snu(2026-2).xlsx",
+    "sentAt": "2026-07-17T14:43:26.277Z",
+    "note": "사용자 수동 업로드분과 동일 내용 — 서버 dryRun unchanged 확인으로 기록"
+  },
+  "yonsei": {
+    "hash": "86ff0d83c6811b03a9a35a8aae8b21f384081be7b618579e114b08998353a1f0",
+    "rows": 5610,
+    "file": "data_26_2/yonsei(2026-2).xlsx",
+    "sentAt": "2026-07-17T14:43:26.414Z",
+    "note": "사용자 수동 업로드분과 동일 내용 — 서버 dryRun unchanged 확인으로 기록"
   }
 }

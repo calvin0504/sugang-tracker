@@ -6,3 +6,4 @@ package-lock.json
 
 # 별도 git 저장소 (bagstrap/SchoolCourse) — 이 repo에는 포함하지 않음
 SchoolCourse/
+.env
