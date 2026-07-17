@@ -35,6 +35,7 @@
             -->
             <th>편람 상태</th>
             <th>시간표</th>
+            <th>DB 적재</th>
             <th>마지막 확인</th>
             <th>링크</th>
           </tr>
@@ -45,7 +46,7 @@
 
     <footer class="page-foot">
       상태는 GitHub Actions가 주기적으로 자동 갱신 · 감지 로직은 <code>checker/check.mjs</code> ·
-      26-2 확정 일정은 <code>docs/data/schools.json</code>의 <code>period262</code>에 직접 기입
+      DB 적재는 <code>checker/upload.mjs</code> 전송 기록(<code>docs/data/upload.json</code>) 기준
     </footer>
   </main>
   <script src="app.js"></script>

@@ -1,6 +1,7 @@
 // 대시보드: docs/data/schools.json(마스터) + docs/data/status.json(체커 결과)
-// + docs/data/scrapers.json(수집기 매핑) + docs/data/fetch.json(수집 결과)을 읽어 렌더링.
-const state = { schools: [], status: {}, scrapers: {}, fetchLog: {}, filter: 'all', query: '' };
+// + docs/data/scrapers.json(수집기 매핑) + docs/data/fetch.json(수집 결과)
+// + docs/data/upload.json(DB 적재 기록, checker/upload.mjs)을 읽어 렌더링.
+const state = { schools: [], status: {}, scrapers: {}, fetchLog: {}, uploadLog: {}, filter: 'all', query: '' };
 
 const STATUS_META = {
   detected: { label: '편람 감지', order: 0 },
@@ -60,13 +61,14 @@ function counts() {
   const c = {
     all: state.schools.length,
     detected: 0, not_detected: 0, error: 0, manual: 0, unchecked: 0,
-    confirmed: 0, fetched: 0, withScraper: 0,
+    confirmed: 0, fetched: 0, withScraper: 0, uploaded: 0,
   };
   for (const s of state.schools) {
     c[statusOf(s)]++;
     if (s.period262) c.confirmed++;
     if (state.scrapers[s.id]?.entry) c.withScraper++;
     if (fetchStateOf(s) === 'fetched') c.fetched++;
+    if (state.uploadLog[s.id]?.sentAt) c.uploaded++;
   }
   return c;
 }
@@ -78,7 +80,7 @@ function renderTiles() {
     { key: 'not_detected', num: c.not_detected, label: '⚪ 미감지' },
     { key: 'error', num: c.error, label: '🔴 오류' },
     { key: 'manual', num: c.manual, label: '🟡 수동 확인' },
-    { key: 'all', num: `${c.confirmed}/${c.all}`, label: '📅 26-2 일정 확정' },
+    { key: 'all', num: `${c.uploaded}/${c.fetched}`, label: '📦 DB 적재 완료' },
     { key: 'all', num: `${c.fetched}/${c.withScraper}`, label: '📥 시간표 수집' },
   ];
   document.getElementById('tiles').innerHTML = tiles
@@ -134,13 +136,14 @@ function renderRows() {
         </span>
       </td>
       <td>${fetchCell}</td>
+      <td>${renderUploadCell(s)}</td>
       <td class="checked-at">${fmtTime(info?.lastChecked) || '-'}</td>
       <td>${s.catalogUrl ? `<a class="link-btn" href="${esc(s.catalogUrl)}" target="_blank" rel="noopener">편람 ↗</a>` : '-'}</td>
     </tr>`;
   });
 
   document.getElementById('rows').innerHTML =
-    rows.join('') || '<tr class="empty-row"><td colspan="6">조건에 맞는 학교가 없습니다</td></tr>';
+    rows.join('') || '<tr class="empty-row"><td colspan="7">조건에 맞는 학교가 없습니다</td></tr>';
 }
 
 function renderFetchCell(school) {
@@ -165,6 +168,19 @@ function renderFetchCell(school) {
     default:
       return `<span class="fetch idle" title="편람 감지되면 수집 대상이 됩니다">대기</span>`;
   }
+}
+
+// DB 적재 상태: upload.json 기록 기준 (checker/upload.mjs가 전송 성공 시 기록)
+function renderUploadCell(school) {
+  const up = state.uploadLog[school.id];
+  if (up?.sentAt) {
+    const title = `${up.file ?? ''} ${typeof up.rows === 'number' ? `${up.rows.toLocaleString()}행` : ''}`.trim();
+    return `<span class="fetch fetched" title="${esc(title)}">📦 적재됨 <span class="fetch-time">${fmtTime(up.sentAt)}</span></span>`;
+  }
+  if (fetchStateOf(school) === 'fetched') {
+    return '<span class="fetch waiting" title="수집됐지만 아직 DB 미전송 — node checker/upload.mjs">⏳ 미적재</span>';
+  }
+  return '<span class="fetch none">-</span>';
 }
 
 function renderLastUpdated() {
@@ -199,16 +215,18 @@ document.getElementById('search').addEventListener('input', (e) => {
 
 async function load() {
   const bust = `?t=${Date.now()}`;
-  const [schools, status, scrapers, fetchLog] = await Promise.all([
+  const [schools, status, scrapers, fetchLog, uploadLog] = await Promise.all([
     fetch(`data/schools.json${bust}`).then((r) => r.json()),
     fetch(`data/status.json${bust}`).then((r) => r.json()).catch(() => ({})),
     fetch(`data/scrapers.json${bust}`).then((r) => r.json()).catch(() => ({})),
     fetch(`data/fetch.json${bust}`).then((r) => r.json()).catch(() => ({})),
+    fetch(`data/upload.json${bust}`).then((r) => r.json()).catch(() => ({})),
   ]);
   state.schools = schools;
   state.status = status;
   state.scrapers = scrapers;
   state.fetchLog = fetchLog;
+  state.uploadLog = uploadLog;
   render();
 }
 
