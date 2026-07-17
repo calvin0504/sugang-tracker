@@ -308,12 +308,16 @@
     "notes": ""
   },
   "kw": {
-    "entry": null,
-    "mode": "none",
-    "ready262": false,
-    "expectedOutputs": [],
-    "blockers262": "스크레이퍼 없음",
-    "notes": ""
+    "entry": "node scrap_source/scrap_kw.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": [
+      "data_26_2/kw(2026-2).xlsx"
+    ],
+    "minRows": 400,
+    "blockers262": "",
+    "notes": "KLAS 공개 API(JSON POST, 세션 불필요) 대학원 7곳 순회 — 2026-07-17 신규 제작. 경영·스마트융합·교육·환경·건설법무는 아직 0건(순차 등재 중) — 개강 전 npm run fetch kw --force 재수집 권장"
   },
   "ssu": {
     "entry": "node scrap_source/scrap_ssu.js",

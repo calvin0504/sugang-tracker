@@ -322,10 +322,10 @@
     "code": "KW",
     "ref261": "2026.02.11 ~ 02.12",
     "period262": "",
-    "catalogUrl": "",
-    "notes": "타입 생성 필요. 편람 링크 미확보",
+    "catalogUrl": "https://klas.kw.ac.kr/ext/out/ststd/LectrePlanGdhlStdPage.do",
+    "notes": "KLAS 외부공개 대학원 강의계획서 조회 — API(LectrePlanDaList.do) 세션 불필요. UI '데이터 없음'은 대학원 미선택 alert 차단 때문이니 속지 말 것",
     "check": {
-      "type": "manual"
+      "type": "probe"
     }
   },
   {

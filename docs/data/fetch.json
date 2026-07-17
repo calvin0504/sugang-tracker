@@ -384,5 +384,22 @@
     ],
     "minRows": 2500,
     "logTail": null
+  },
+  "kw": {
+    "ok": true,
+    "fetchedAt": "2026-07-17T05:01:29.338Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 3561,
+    "outputs": [
+      {
+        "path": "data_26_2/kw(2026-2).xlsx",
+        "bytes": 30679,
+        "fresh": true,
+        "rows": 484
+      }
+    ],
+    "minRows": 400,
+    "logTail": null
   }
 }
