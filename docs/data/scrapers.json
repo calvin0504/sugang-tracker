@@ -211,7 +211,7 @@
     "mode": "none",
     "ready262": false,
     "expectedOutputs": [],
-    "blockers262": "스크레이퍼 없음 (README TODO에만 존재, 포털 로그인 필요할 가능성)",
+    "blockers262": "자동화 불가 확정(2026-07-17 전수 조사): 대학원 시간표 공개 경로 없음 — sugang.uos.ac.kr 로그인 필수(JS에 public API 단서도 없음), WISE는 SSO, 대학원 홈 공지에 시간표 미게시, 레거시 공개조회(uosdoc)는 404 폐쇄. 학부만 www.uos.ac.kr 개설교과목 게시판(CA2)에 엑셀 공지됨",
     "notes": ""
   },
   "kmu": {
