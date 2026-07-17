@@ -76,7 +76,8 @@ async function contentHash(file) {
 // ===== 서버 API 전송 (BulkSchoolCourseV2Controller /action/upload) =====
 async function sendOne(id, filePath) {
   const base = process.env.UPLOAD_API_URL;
-  const key = process.env.UPLOAD_API_KEY;
+  // 토큰 값에 "Bearer " 접두어가 섞여 들어와도 이중 접두어가 되지 않게 제거
+  const key = (process.env.UPLOAD_API_KEY ?? '').replace(/^Bearer\s+/i, '').trim();
   if (!base) {
     throw new Error('UPLOAD_API_URL 미설정 (예: https://<host>/api/v1/bulk/school-course/v2/action/upload)');
   }
