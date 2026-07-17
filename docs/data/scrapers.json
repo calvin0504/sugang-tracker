@@ -224,7 +224,8 @@
     ],
     "minRows": 250,
     "blockers262": "",
-    "notes": "EDWARD Nexacro UI 구동 + 세션 재활용 SSV 재조회(univCd 치환, jcf_channel_type 헤더 필수). 수동 엑셀 병합(merge_kmu_excels.py) 대체 — 2026-07-17 자동화"
+    "notes": "EDWARD Nexacro UI 구동 + 세션 재활용 SSV 재조회(univCd 치환, jcf_channel_type 헤더 필수). 수동 엑셀 병합(merge_kmu_excels.py) 대체 — 2026-07-17 자동화",
+    "uploadType": "KYE"
   },
   "konkuk": {
     "entry": "node scrap_source/scrap_kku.js",
@@ -285,7 +286,8 @@
     ],
     "minRows": 1000,
     "blockers262": "",
-    "notes": "his.pusan.ac.kr 공개 POST 1회 방식(신규, 브라우저 불필요). 구 scrap_psu.py(onestop Selenium)는 onestop 백엔드에 학기 데이터가 늦게 실려 0건 위험 — 폐기 후보"
+    "notes": "his.pusan.ac.kr 공개 POST 1회 방식(신규, 브라우저 불필요). 구 scrap_psu.py(onestop Selenium)는 onestop 백엔드에 학기 데이터가 늦게 실려 0건 위험 — 폐기 후보",
+    "uploadType": "BUSAN"
   },
   "cnu": {
     "entry": "node scrap_source/scrap_cnu.js",

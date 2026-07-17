@@ -1,0 +1,122 @@
+{
+  "kaist": {
+    "hash": "dae94fa658125ca016cd7a811199addd6f0d7a7f2dd281e35d8fabe535c1df66",
+    "rows": 2091,
+    "file": "data_26_2/kaist(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:09:25.204Z"
+  },
+  "skku": {
+    "hash": "5f8c4f20c08f27dae0efaabe4bc06b3fcb1a1339ea6e6a1813b29f76e357ef9c",
+    "rows": 1249,
+    "file": "data_26_2/skku(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:15:37.495Z"
+  },
+  "postech": {
+    "hash": "66c4ed35a9bd48bf998b2f2e776f6ff82d0ee8dfb45c054c4ed0cbbb0e03513e",
+    "rows": 313,
+    "file": "data_26_2/postech(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:15:51.531Z"
+  },
+  "sejong": {
+    "hash": "4959e2c4dd1c6b634194431c4497f6fe9a4d0f7e32846d73c15ff15ab4971c56",
+    "rows": 1016,
+    "file": "data_26_2/sju(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:16:41.643Z"
+  },
+  "dgist": {
+    "hash": "8290818ae23814eea424b4dc2eed7ba2aeae31c9c030d473bbbfd350a93d58ff",
+    "rows": 968,
+    "file": "data_26_2/dgist(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:17:28.899Z"
+  },
+  "ajou": {
+    "hash": "b5d7fe76e8cc62e67e409cd43921d56aaf263d14da4f1ec1fdc06929f914fc3a",
+    "rows": 664,
+    "file": "data_26_2/ajou(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:18:00.007Z"
+  },
+  "cau": {
+    "hash": "b294eb9e09dc0552768ce880985ee6bb0b93a0bfe4804c6a362c6a45e1b54beb",
+    "rows": 2328,
+    "file": "data_26_2/cau(2026_2).xlsx",
+    "sentAt": "2026-07-17T13:20:18.618Z"
+  },
+  "gist": {
+    "hash": "33b4d618345a86d3dc01b7994368181d1aa7b0ddf8f67683fdd3d0a4b7e7bce8",
+    "rows": 199,
+    "file": "data_26_2/gist(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:20:27.875Z"
+  },
+  "hufs": {
+    "hash": "fde7294bc2929b7fc86335753ef64204ed7e03b099ed6f8ce21f8699f89790dc",
+    "rows": 1901,
+    "file": "data_26_2/hufs(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:21:08.697Z"
+  },
+  "kmu": {
+    "hash": "3eb4f93a2ee323287d86008a6cee34c193f566d5676ed13f3c12a756f01a6fda",
+    "rows": 416,
+    "file": "data_26_2/kmu(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:21:23.339Z"
+  },
+  "konkuk": {
+    "hash": "c5c50724b0413f8f70803ec845e72d5b368bfa28f2dcdea05d564bad21ba5fef",
+    "rows": 884,
+    "file": "data_26_2/konkuk(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:22:05.362Z"
+  },
+  "dongguk": {
+    "hash": "440b874ce297255d6af06acd0ff1e3186cbc11fda79ff0789cad04929280713d",
+    "rows": 1131,
+    "file": "data_26_2/dongguk(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:23:07.895Z"
+  },
+  "hongik": {
+    "hash": "c863b64951fa2575136cf1c6146b1e3bfddfdfb609290c6f8ad75595896383db",
+    "rows": 1017,
+    "file": "data_26_2/hongik(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:23:57.389Z"
+  },
+  "sogang": {
+    "hash": "dab523737ae5f53d94966092798f59d8385d90e64ecfcddb76daf21acbda9de4",
+    "rows": 230,
+    "file": "data_26_2/sogang(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:24:04.802Z"
+  },
+  "pusan": {
+    "hash": "1c5c6fa6dfc11505fab18ceb4f96658e077be6760ba7095a47063b25e5555d8e",
+    "rows": 2816,
+    "file": "data_26_2/pusan(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:27:13.082Z"
+  },
+  "cnu": {
+    "hash": "d60e749c0d0944d5306b3b24480fcfb4cd9db00be2e5d5c33bd7016d55c7f7f3",
+    "rows": 1293,
+    "file": "data_26_2/cnu(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:28:33.083Z"
+  },
+  "kw": {
+    "hash": "08527844f70f15e534bc4ab8b82ea30bdb4f7371ebbd69dff5eea768bed04086",
+    "rows": 484,
+    "file": "data_26_2/kw(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:28:50.328Z"
+  },
+  "sookmyung": {
+    "hash": "eb826aaa7b6f1eb87117080d77417174e9176598c79a5e97511092c2ce61fa46",
+    "rows": 575,
+    "file": "data_26_2/smwu(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:29:11.342Z"
+  },
+  "sungshin": {
+    "hash": "0f0d7cfad3f29f1e9e09409210547fe5d8f8ac5ea588cbecf96de639eabd0115",
+    "rows": 466,
+    "file": "data_26_2/sungshin(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:29:31.985Z"
+  },
+  "knu": {
+    "hash": "31ec6357c10314bab3218e6f98fce36e0f58fc4b91bfbfd46a3e13585b2f4628",
+    "rows": 1951,
+    "file": "data_26_2/kyungpook(2026-2).xlsx",
+    "sentAt": "2026-07-17T13:31:18.300Z"
+  }
+}

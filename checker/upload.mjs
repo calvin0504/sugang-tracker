@@ -72,7 +72,8 @@ async function sendOne(id, filePath) {
     throw new Error('UPLOAD_API_URL 미설정 (예: https://<host>/api/v1/bulk/school-course/v2/action/upload)');
   }
   const url = new URL(base);
-  url.searchParams.set('type', scrapers[id]?.uploadType ?? id);
+  // 서버 type 키는 대문자 학교 코드 (예외는 scrapers.json uploadType으로: kmu→KYE)
+  url.searchParams.set('type', scrapers[id]?.uploadType ?? id.toUpperCase());
   url.searchParams.set('academyYear', String(ACADEMY_YEAR));
   url.searchParams.set('semester', SEMESTER);
   url.searchParams.set('dryRun', String(serverDry));
@@ -84,7 +85,7 @@ async function sendOne(id, filePath) {
     method: 'POST',
     headers: key ? { Authorization: `Bearer ${key}` } : {},
     body: form,
-    signal: AbortSignal.timeout(300000), // 대용량 파싱 대기
+    signal: AbortSignal.timeout(600000), // 대용량 파싱 대기 (snu/yonsei 5천행급은 300초 초과 사례 있음)
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
   return res.json().catch(() => ({}));
