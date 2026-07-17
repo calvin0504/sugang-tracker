@@ -414,14 +414,14 @@
   "jbnu": {
     "entry": "node scrap_source/scrap_jbnu.js",
     "cwd": ".",
-    "mode": "semi",
-    "ready262": false,
+    "mode": "auto",
+    "ready262": true,
     "expectedOutputs": [
       "data_26_2/jbnu(2026-2).xlsx"
     ],
     "minRows": 650,
-    "blockers262": "스크레이퍼가 폐쇄된 구 oasis.jbnu.ac.kr 기반 — 신형 JUMP 포털(jump.jbnu.ac.kr sucrPlan) 대응 재작성 필요",
-    "notes": "감지 프로브가 확인한 JUMP 공개 API(SucrLessnSbjctInq/list.do)를 쓰면 재작성이 오히려 단순해질 수 있음"
+    "blockers262": "26-2 강좌 미등재(조회기간은 개시, list.do 0건) — 등재되면 프로브가 detected로 바뀌고 npm run fetch가 자동 수집",
+    "notes": "JUMP 공개 API(list.do, 세션 불필요) 대학원 16곳 순회로 재작성(구 oasis 폐기) — 2026-07-17. 대학원 목록은 onLoad.do 응답 가로채기(Playwright 1회). 첫 수집 성공 시 대면/비대면·수업운영방향 컬럼 값 검증 필요(그리드 바인딩 추정 매핑)"
   },
   "donga": {
     "entry": null,
