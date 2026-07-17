@@ -5,10 +5,10 @@
     "code": "SNU",
     "ref261": "2026.01.27 ~ 02.03 (변경 03.03~03.09)",
     "period262": "",
-    "catalogUrl": "",
-    "notes": "찬우님 엑셀파일 보유",
+    "catalogUrl": "https://sugang.snu.ac.kr/sugang/cc/cc100.action",
+    "notes": "수강스누 강좌검색·엑셀저장 모두 로그인 불필요(2026-07-17 확인). 기본 학기 헤더 + 검색 건수로 판정",
     "check": {
-      "type": "manual"
+      "type": "probe"
     }
   },
   {

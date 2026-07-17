@@ -367,5 +367,22 @@
     ],
     "minRows": 500,
     "logTail": null
+  },
+  "snu": {
+    "ok": true,
+    "fetchedAt": "2026-07-17T00:54:53.655Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 9955,
+    "outputs": [
+      {
+        "path": "data_26_2/snu(2026-2).xlsx",
+        "bytes": 592732,
+        "fresh": true,
+        "rows": 4646
+      }
+    ],
+    "minRows": 2500,
+    "logTail": null
   }
 }

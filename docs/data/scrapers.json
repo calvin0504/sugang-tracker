@@ -1,13 +1,15 @@
 {
   "snu": {
-    "entry": null,
-    "mode": "manual",
-    "ready262": false,
+    "entry": "node scrap_source/scrap_snu.js && python scrap_source/scrap_snu/process_snu_excel_26_2.py",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
     "expectedOutputs": [
       "data_26_2/snu(2026-2).xlsx"
     ],
-    "blockers262": "수강스누에서 .xls 수동 다운로드 → scrap_snu/process_snu_excel.py 경로 2곳(입력/출력) 수정 후 실행",
-    "notes": "26-1: 서울대_02.06.xls → snu(2026-1).xlsx (대학원만 필터)"
+    "minRows": 2500,
+    "blockers262": "",
+    "notes": "수강스누 검색→엑셀저장 다운로드(scrap_snu.js) 후 대학원 필터(process_snu_excel_26_2.py) — 수동 다운로드 절차 대체, 2026-07-17 자동화. 원본 전체 덤프는 snu_raw(2026-2).xls로 남음"
   },
   "kaist": {
     "entry": "node scrap_source/scrap_kaist.js",
