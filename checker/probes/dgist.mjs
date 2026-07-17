@@ -26,8 +26,9 @@ export default async function probe(page) {
     return { records: Number(j?.records ?? 0) };
   });
   if (out.error) return { status: 'error', error: `list.do ${out.error}` };
+  // rows=1 요청이라 records가 전체 건수가 아닐 수 있음 — 존재 여부만 판정
   if (out.records > 0) {
-    return { status: 'detected', detail: `2026 가을학기 대학원 강좌 ${out.records.toLocaleString()}건 조회됨` };
+    return { status: 'detected', detail: '2026 가을학기 대학원 강좌 등재 확인 (전량 조회는 수집기)' };
   }
   return { status: 'not_detected', detail: '2026 가을학기 강좌 0건' };
 }
