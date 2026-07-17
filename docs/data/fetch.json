@@ -350,5 +350,22 @@
     ],
     "minRows": 250,
     "logTail": null
+  },
+  "dgist": {
+    "ok": true,
+    "fetchedAt": "2026-07-17T00:27:57.569Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 6740,
+    "outputs": [
+      {
+        "path": "data_26_2/dgist(2026-2).xlsx",
+        "bytes": 69551,
+        "fresh": true,
+        "rows": 968
+      }
+    ],
+    "minRows": 500,
+    "logTail": null
   }
 }

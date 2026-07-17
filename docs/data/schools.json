@@ -126,9 +126,9 @@
     "ref261": "(학부) 2026.02.10 ~ 02.12 / (대학원) 02.04~02.06",
     "period262": "",
     "catalogUrl": "https://welcome.dgist.ac.kr/ucs/ucsqProfRespSbjtInq/index.do#",
-    "notes": "",
+    "notes": "개설강좌 페이지는 조회 전 빈 화면 — list.do 공개 API 프로브로 건수 판정 (Node 직접 fetch는 TLS 거부, 페이지 컨텍스트 필수)",
     "check": {
-      "type": "keyword"
+      "type": "probe"
     }
   },
   {

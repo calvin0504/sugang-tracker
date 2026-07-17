@@ -121,12 +121,16 @@
     "notes": "headless 가능. 사이트 기본 학기 의존 — 편람 감지 후 실행하면 됨. 대학원만"
   },
   "dgist": {
-    "entry": null,
-    "mode": "none",
-    "ready262": false,
-    "expectedOutputs": [],
-    "blockers262": "스크레이퍼 없음 — 26-1도 사이트에서 .xls 수동 다운로드로 확보",
-    "notes": ""
+    "entry": "node scrap_source/scrap_dgist.js",
+    "cwd": ".",
+    "mode": "auto",
+    "ready262": true,
+    "expectedOutputs": [
+      "data_26_2/dgist(2026-2).xlsx"
+    ],
+    "minRows": 500,
+    "blockers262": "",
+    "notes": "list.do 공개 API(JSON, 전체 1회 반환) — 수동 .xls 다운로드 대체, 2026-07-17 자동화. 서버 TLS가 낡아 브라우저 페이지 컨텍스트에서 fetch 필수"
   },
   "ajou": {
     "entry": "node scrap_source/scrap_ajou.js",
