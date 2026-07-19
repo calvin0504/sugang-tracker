@@ -132,5 +132,11 @@
     "file": "data_26_2/yonsei(2026-2).xlsx",
     "sentAt": "2026-07-17T14:43:26.414Z",
     "note": "사용자 수동 업로드분과 동일 내용 — 서버 dryRun unchanged 확인으로 기록"
+  },
+  "ewha": {
+    "hash": "3a3c83667149b528117349abffe6a8eed6190de4b3506546cd29f1c52266ccf8",
+    "rows": 1487,
+    "file": "data_26_2/ehwa(2026-2).xlsx",
+    "sentAt": "2026-07-19T18:14:43.202Z"
   }
 }

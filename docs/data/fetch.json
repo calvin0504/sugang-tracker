@@ -401,5 +401,20 @@
     ],
     "minRows": 400,
     "logTail": null
+  },
+  "ewha": {
+    "ok": true,
+    "fetchedAt": "2026-07-19T08:12:18.547Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": null,
+    "outputs": [
+      {
+        "path": "data_26_2/ehwa(2026-2).xlsx",
+        "bytes": 140451,
+        "fresh": true
+      }
+    ],
+    "logTail": null
   }
 }
