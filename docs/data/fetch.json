@@ -167,10 +167,10 @@
   },
   "ssu": {
     "ok": false,
-    "fetchedAt": "2026-07-16T23:04:17.717Z",
+    "fetchedAt": "2026-07-19T19:12:54.606Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 180057,
+    "durationMs": 179908,
     "outputs": [
       {
         "path": "data_26_2/ssu(2026-2).xlsx",
