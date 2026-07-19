@@ -27,9 +27,12 @@ export default async function probe(page, school) {
       form = next ? form[next] : null;
     }
     if (!form) return { ok: false };
-    // 대학원 콤보는 필수 검증 항목 — 서버가 내려준 목록의 첫 코드(일반대학원=31)를 쓴다
+    // 대학원 콤보는 필수 검증 항목 — 서버가 내려준 목록의 첫 코드(일반대학원=31)를 쓴다.
+    // set_value만으로는 파생 필드(GROUP_CD 등)가 갱신되지 않아 서버가 0건을 돌려주므로
+    // 반드시 정식 onitemchanged 핸들러를 태운 뒤 조회를 발사해야 한다.
     const univ = String(form.univCd?.getColumn(0, 'UNIV_CD') ?? '31');
     form.div_search.cbbUnivCd.set_value(univ);
+    form.div_search_cbbUnivCd_onitemchanged(form.div_search.cbbUnivCd, { postvalue: univ });
     form.srch.setColumn(0, 'UNIV_CD', univ);
     form.div_search_btnSearch_onclick();
     return { ok: true, univ };
