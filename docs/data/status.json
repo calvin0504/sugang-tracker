@@ -1,231 +1,231 @@
 {
   "yonsei": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "키워드 \"2026-2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "korea": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "대학원 2026-2 과목 조회됨 (63건 샘플)",
     "error": null,
     "firstDetectedAt": "2026-07-20T04:48:29.705Z"
   },
   "sejong": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "키워드 \"2026/2학기\" 발견",
     "error": null,
     "firstDetectedAt": "2026-07-14T16:11:54.282Z"
   },
   "gist": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 개설강좌 421건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T17:31:34.828Z"
   },
   "konkuk": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 종합시간표 923과목 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:25:07.069Z"
   },
   "kaist": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "OTL API에 2026 가을학기 강의 등재됨",
     "error": null,
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "skku": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "학기 콤보에 2026학년도 2학기 등재됨",
     "error": null,
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "postech": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 개설과목 759건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T20:17:33.039Z"
   },
   "unist": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "SAP 서버 3곳 모두 미개방(학기 간 셧다운) — 서버 재개 자체가 임박 신호, 8월 초 예상",
     "error": null,
     "firstDetectedAt": null
   },
   "hanyang": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "편람 시스템 현재 학기가 2026-2로 전환됨 (sgsc 2026/20, suup 2026/20)",
     "error": null,
     "firstDetectedAt": "2026-07-20T08:17:20.840Z"
   },
   "khu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "본문 2,479자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "dgist": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026 가을학기 대학원 강좌 등재 확인 (전량 조회는 수집기)",
     "error": null,
     "firstDetectedAt": "2026-07-17T04:19:49.920Z"
   },
   "ajou": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 수업계획 969건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T20:17:33.039Z"
   },
   "cau": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 과목명 '학' 검색 1,139건",
     "error": null,
     "firstDetectedAt": "2026-07-15T17:31:34.827Z"
   },
   "ewha": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 개설강좌 744건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-19T08:07:54.247Z"
   },
   "kau": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "본문 32자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "hufs": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원(AI융합학과 표본) 7과목 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T20:17:33.039Z"
   },
   "kmu": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 개설강좌 727건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:31:56.501Z"
   },
   "dongguk": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 개설강좌 653건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:25:07.069Z"
   },
   "hongik": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 시간표 렌더링 확인 (td 200개)",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:25:07.069Z"
   },
   "sogang": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 개설교과목 그리드 렌더링 확인 (본문 223,388자)",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:59:23.063Z"
   },
   "pusan": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 대학원 편람 2,820행 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T20:17:33.039Z"
   },
   "cnu": {
     "status": "error",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": null,
     "error": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator('text=하기방학특별학기').first()\n",
     "firstDetectedAt": "2026-07-14T21:06:58.008Z"
   },
   "ssu": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 '연구' 검색 결과 렌더링 확인 (본문 7,388자)",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:59:23.063Z"
   },
   "kookmin": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "일반대학원 2026-2 강의 481건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-14T22:11:52.907Z"
   },
   "sookmyung": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 기본 검색에 과목 그리드 렌더링 확인 (본문 519→6794자)",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:45:35.939Z"
   },
   "sungshin": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 개설강좌 52건 조회됨 (입력 진행 중일 수 있음 — 수집 전 건수 추이 확인)",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:45:35.939Z"
   },
   "inha": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 조회 결과 없음 (2464자, 컨트롤은 40709자 정상)",
     "error": null,
     "firstDetectedAt": null
   },
   "knu": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 수업시간표 5,985행 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T19:25:07.069Z"
   },
   "kdi": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "본문 728자 검사, 키워드 없음",
     "error": null,
     "firstDetectedAt": null
   },
   "jbnu": {
     "status": "not_detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "조회기간은 개시됐으나 개설강좌 0건 (등재 대기)",
     "error": null,
     "firstDetectedAt": "2026-07-15T00:04:07.574Z"
   },
   "snu": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 강좌검색 8625건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-17T04:19:49.920Z"
   },
   "kw": {
     "status": "detected",
-    "lastChecked": "2026-07-23T19:42:32.259Z",
+    "lastChecked": "2026-07-23T21:19:47.812Z",
     "detail": "2026-2 일반대학원 강의 430건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-17T07:29:01.246Z"
