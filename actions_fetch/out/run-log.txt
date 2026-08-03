@@ -4,7 +4,7 @@
 [INFO] allMajorList = 1484
 [2/3] campus loop 시작
 [Campus] 일반대학원 (30001)
-[WARN] fetch error: The operation was aborted due to timeout
+[INFO] results = 481
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
@@ -42,5 +42,5 @@
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
 [INFO] results = 0
-[3/3] 저장 시작. totalRows = 421
+[3/3] 저장 시작. totalRows = 902
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
