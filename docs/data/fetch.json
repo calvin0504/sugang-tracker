@@ -416,5 +416,22 @@
       }
     ],
     "logTail": null
+  },
+  "korea": {
+    "ok": true,
+    "fetchedAt": "2026-08-03T01:04:18.000Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": null,
+    "outputs": [
+      {
+        "path": "data_26_2/korea(2026-2).xlsx",
+        "bytes": 191720,
+        "fresh": true,
+        "rows": 2197
+      }
+    ],
+    "minRows": 750,
+    "logTail": null
   }
 }

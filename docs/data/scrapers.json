@@ -72,7 +72,7 @@
     ],
     "minRows": 750,
     "blockers262": "",
-    "notes": "하드코딩 세션 쿠키(2024-07)가 만료됐으면 실패 → 브라우저에서 새 쿠키 받아 fetch 헤더 3곳 갱신. 대학원만 수집"
+    "notes": "2026-07-24 사이트 개편 대응 리라이트 — 공개 API(lectList 쿠키 발급→/d/v/combo→/d/v/lectGrad) 사용, 로그인·수동 쿠키 불필요. 서울+세종 대학원만 수집"
   },
   "unist": {
     "entry": "node scrap_source/scrap_unist.js",
