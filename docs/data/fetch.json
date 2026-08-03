@@ -167,16 +167,16 @@
   },
   "ssu": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:59:22.953Z",
+    "fetchedAt": "2026-08-03T16:04:48.352Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 112166,
+    "durationMs": 111588,
     "outputs": [
       {
         "path": "data_26_2/ssu(2026-2).xlsx",
-        "bytes": 54750,
+        "bytes": 56037,
         "fresh": true,
-        "rows": 484
+        "rows": 494
       }
     ],
     "minRows": 200,
