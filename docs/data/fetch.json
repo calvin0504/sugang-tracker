@@ -167,16 +167,16 @@
   },
   "ssu": {
     "ok": true,
-    "fetchedAt": "2026-08-03T03:05:06.000Z",
+    "fetchedAt": "2026-08-03T15:59:22.953Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": null,
+    "durationMs": 112166,
     "outputs": [
       {
         "path": "data_26_2/ssu(2026-2).xlsx",
-        "bytes": 55709,
+        "bytes": 54750,
         "fresh": true,
-        "rows": 492
+        "rows": 484
       }
     ],
     "minRows": 200,
@@ -184,16 +184,16 @@
   },
   "kookmin": {
     "ok": true,
-    "fetchedAt": "2026-08-03T02:27:28.000Z",
+    "fetchedAt": "2026-08-03T15:57:04.132Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": null,
+    "durationMs": 44290,
     "outputs": [
       {
         "path": "data_26_2/kookmin(2026-2).xlsx",
         "bytes": 67009,
         "fresh": true,
-        "rows": 902
+        "rows": 903
       }
     ],
     "minRows": 350,
@@ -218,16 +218,16 @@
   },
   "sungshin": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:59:37.330Z",
+    "fetchedAt": "2026-08-03T15:56:15.962Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 18477,
+    "durationMs": 19471,
     "outputs": [
       {
         "path": "data_26_2/sungshin(2026-2).xlsx",
-        "bytes": 36453,
+        "bytes": 37920,
         "fresh": true,
-        "rows": 466
+        "rows": 469
       }
     ],
     "minRows": 170,
@@ -269,16 +269,16 @@
   },
   "sogang": {
     "ok": true,
-    "fetchedAt": "2026-07-16T15:05:22.711Z",
+    "fetchedAt": "2026-08-03T15:55:10.829Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 142575,
+    "durationMs": 122971,
     "outputs": [
       {
         "path": "data_26_2/sogang(2026-2).xlsx",
-        "bytes": 23033,
+        "bytes": 68025,
         "fresh": true,
-        "rows": 230
+        "rows": 923
       }
     ],
     "minRows": 160,
@@ -388,16 +388,16 @@
   },
   "kw": {
     "ok": true,
-    "fetchedAt": "2026-07-17T05:01:29.338Z",
+    "fetchedAt": "2026-08-03T15:55:56.475Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 3561,
+    "durationMs": 3973,
     "outputs": [
       {
         "path": "data_26_2/kw(2026-2).xlsx",
-        "bytes": 30679,
+        "bytes": 75696,
         "fresh": true,
-        "rows": 484
+        "rows": 534
       }
     ],
     "minRows": 400,
@@ -405,17 +405,19 @@
   },
   "ewha": {
     "ok": true,
-    "fetchedAt": "2026-07-19T08:12:18.547Z",
+    "fetchedAt": "2026-08-03T15:55:52.480Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": null,
+    "durationMs": 41571,
     "outputs": [
       {
         "path": "data_26_2/ehwa(2026-2).xlsx",
-        "bytes": 140451,
-        "fresh": true
+        "bytes": 142106,
+        "fresh": true,
+        "rows": 1493
       }
     ],
+    "minRows": 600,
     "logTail": null
   },
   "korea": {
