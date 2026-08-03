@@ -129,23 +129,29 @@ for (const campus of gradCampusList) {
     scheduleDivCd: null,
   });
 
-  let response;
-  try {
-    response = await fetch(`${BASE}/api/subject/public/lectures/conditions/validation/ko`, {
-      method: 'POST',
-      headers: {
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'ko,en;q=0.9,en-US;q=0.8',
-        'content-type': 'application/json;charset=UTF-8',
-        Referer: REFERER,
-      },
-      body: postData,
-      signal: AbortSignal.timeout(30000),
-    });
-  } catch (err) {
-    console.log('[WARN] fetch error:', err?.message || err);
-    continue;
+  // 일반대학원처럼 큰 단과대는 30초를 넘기기도 함 — 60초 타임아웃 + 3회 재시도
+  let response = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      response = await fetch(`${BASE}/api/subject/public/lectures/conditions/validation/ko`, {
+        method: 'POST',
+        headers: {
+          accept: 'application/json, text/plain, */*',
+          'accept-language': 'ko,en;q=0.9,en-US;q=0.8',
+          'content-type': 'application/json;charset=UTF-8',
+          Referer: REFERER,
+        },
+        body: postData,
+        signal: AbortSignal.timeout(60000),
+      });
+      break;
+    } catch (err) {
+      console.log(`[WARN] fetch error (attempt ${attempt}/3):`, err?.message || err);
+      response = null;
+      if (attempt < 3) await new Promise((r) => setTimeout(r, 5000 * attempt));
+    }
   }
+  if (!response) continue;
 
   if (!response.ok) {
     console.log('[WARN] response not ok. status =', response.status);
