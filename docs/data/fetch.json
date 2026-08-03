@@ -166,21 +166,21 @@
     "logTail": null
   },
   "ssu": {
-    "ok": false,
-    "fetchedAt": "2026-07-19T19:12:54.606Z",
+    "ok": true,
+    "fetchedAt": "2026-08-03T03:05:06.000Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 179908,
+    "durationMs": null,
     "outputs": [
       {
         "path": "data_26_2/ssu(2026-2).xlsx",
-        "bytes": 10943,
+        "bytes": 55709,
         "fresh": true,
-        "rows": 43
+        "rows": 492
       }
     ],
     "minRows": 200,
-    "logTail": "ound no strong result table [\n  {\n    t: {},\n    score: 1352,\n    trCount: 2,\n    maxCols: 15,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1077,\n    trCount: 2,\n    maxCols: 1,\n    head: '엑스포트 계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1071,\n    trCount: 1,\n    maxCols: 1,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  }\n]\n[SET] dropdown[2]:  교육대학원\n[WARN] 교육대학원: result table not found no strong result table [\n  {\n    t: {},\n    score: 1352,\n    trCount: 2,\n    maxCols: 15,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1077,\n    trCount: 2,\n    maxCols: 1,\n    head: '엑스포트 계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  },\n  {\n    t: {},\n    score: 1071,\n    trCount: 1,\n    maxCols: 1,\n    head: '계획 이수구분(주전공) 교과영역 과목번호 과목명 수강유의사항 강좌유형정보 교수명 개설학과 시간/학점(설계) 수강인원 여석 강의시간(강의실) 과정 수강대상 해당 테이블에 데이터가 없습니다.해당 테이블에 데이터가 없습니다.'\n  }\n]\n[SET] dropdown[2]:  기독교학대학원\n[기독교학대학원] rows = 14\n\n✅ saved: C:\\Users\\user\\Desktop\\MY\\RNIN\\bagstrap\\sugang\\SchoolCourse\\data_26_2\\ssu(2026-2).xlsx\n"
+    "logTail": null
   },
   "kookmin": {
     "ok": true,
