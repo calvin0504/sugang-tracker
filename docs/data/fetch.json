@@ -434,5 +434,22 @@
     ],
     "minRows": 750,
     "logTail": null
+  },
+  "hanyang": {
+    "ok": true,
+    "fetchedAt": "2026-08-03T15:11:43.000Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": null,
+    "outputs": [
+      {
+        "path": "data_26_2/hanyang(2026-2).xlsx",
+        "bytes": 1193713,
+        "fresh": true,
+        "rows": 4424
+      }
+    ],
+    "minRows": 1800,
+    "logTail": null
   }
 }
