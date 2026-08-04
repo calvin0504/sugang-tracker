@@ -8,14 +8,14 @@
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
-[INFO] results = 0
-[DEBUG] body head = {"lectureRoms":{"results":[],"totalCount":0,"empty":true},"prohibitType":"NONE","searchCount":null,"invalidCode":null,"warningMessage":null}
+[INFO] results = 68
 [Campus] 비즈니스IT대학원 (36418)
 [INFO] results = 28
 [Campus] AIㆍSW대학원 (36433)
 [INFO] results = 5
 [Campus] 건축전문대학원 (36437)
 [INFO] results = 0
+[DEBUG] body head = {"lectureRoms":{"results":[],"totalCount":0,"empty":true},"prohibitType":"NONE","searchCount":null,"invalidCode":null,"warningMessage":null}
 [Campus] 교육대학원 (30091)
 [INFO] results = 92
 [Campus] 경영대학원 (30120)
@@ -27,7 +27,7 @@
 [Campus] 디자인대학원 (30180)
 [INFO] results = 37
 [Campus] 정치대학원 (30201)
-[INFO] results = 0
+[INFO] results = 22
 [Campus] 스포츠산업대학원 (30207)
 [INFO] results = 47
 [Campus] 법무대학원 (30424)
@@ -37,10 +37,10 @@
 [Campus] 글로벌창업벤처대학원 (30701)
 [INFO] results = 21
 [Campus] 소프트웨어융합대학원 (36272)
-[INFO] results = 17
+[INFO] results = 24
 [Campus] 글로벌평화ㆍ통일대학원 (36379)
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
 [INFO] results = 0
-[3/3] 저장 시작. totalRows = 902
+[3/3] 저장 시작. totalRows = 999
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
