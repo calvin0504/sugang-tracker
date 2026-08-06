@@ -487,5 +487,22 @@
     ],
     "minRows": 750,
     "logTail": null
+  },
+  "jbnu": {
+    "ok": true,
+    "fetchedAt": "2026-08-06T15:58:36.778Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 1206,
+    "outputs": [
+      {
+        "path": "data_26_2/jbnu(2026-2).xlsx",
+        "bytes": 154077,
+        "fresh": true,
+        "rows": 1548
+      }
+    ],
+    "minRows": 650,
+    "logTail": null
   }
 }

@@ -210,9 +210,9 @@
     "firstDetectedAt": null
   },
   "jbnu": {
-    "status": "not_detected",
-    "lastChecked": "2026-08-06T15:25:47.310Z",
-    "detail": "조회기간은 개시됐으나 개설강좌 0건 (등재 대기)",
+    "status": "detected",
+    "lastChecked": "2026-08-06T15:58:48.658Z",
+    "detail": "2026-2 개설강좌 1,547건 조회됨",
     "error": null,
     "firstDetectedAt": "2026-07-15T00:04:07.574Z"
   },

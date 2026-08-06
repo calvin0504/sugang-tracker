@@ -1,11 +1,13 @@
 // 전북대: 구 oasis는 폐쇄(TLS 단계 거부) — JUMP 포털의 공개 수강개설정보조회 API 사용.
 // date.do가 "개설강좌조회기간" 여부(strSchedule Y/N)와 기간을 알려주고,
 // list.do는 기간 중 실제 과목 배열을 반환한다. 학기코드 SUSR016.020 = 2학기.
+// 2026-08-07: 대학원 조회는 구분(strCertDivCd)=5 필수 — 없으면 항상 0건(조용한 미탐이었음).
 const BASE = 'https://jump.jbnu.ac.kr/SCH/SucrLessnSbjctInq';
 const FORM = new URLSearchParams({
   'default.locale': 'CCMN101.KOR',
   '@d1#strYrsa': '2026',
   '@d1#strSemstrCd': 'SUSR016.020',
+  '@d1#strCertDivCd': '5', // 구분=대학원
   '@d#': '@d1#',
   '@d1#': 'dmReqKey',
   '@d1#tp': 'dm',

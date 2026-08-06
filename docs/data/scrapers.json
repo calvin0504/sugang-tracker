@@ -434,8 +434,8 @@
       "data_26_2/jbnu(2026-2).xlsx"
     ],
     "minRows": 650,
-    "blockers262": "학교 미등재 — 조회기간 게이트는 열렸으나 개설강좌가 학부 포함 전체 0건(2026-08-04 재확인). 등재되면 프로브가 detected로 바뀌고 npm run fetch jbnu 실행하면 됨(수집기 준비 완료)",
-    "notes": "JUMP 공개 API(list.do, 세션 불필요) 대학원 16곳 순회로 재작성(구 oasis 폐기) — 2026-07-17. 대학원 목록은 onLoad.do 응답 가로채기(Playwright 1회). 첫 수집 성공 시 대면/비대면·수업운영방향 컬럼 값 검증 필요(그리드 바인딩 추정 매핑)"
+    "blockers262": "",
+    "notes": "JUMP 공개 API(list.do, 세션 불필요·브라우저 불필요) — 2026-08-07 재작성: 대학원 조회는 구분(strCertDivCd)=5 필수(없으면 0건 미탐이었음), 대학원별 필터는 서버가 무시해 단일 호출로 단순화, 대학원 종류는 ELSM_DIVCDNM. 대면/비대면(FTF_UNTACT_DIVCDNM)·수업운영방향(LESSN_OPER_DRC_CN) 매핑 정정 완료. 주의: 서버 DB엔 JBNU 파서 없음 — 적재하려면 어댑터 추가 필요"
   },
   "donga": {
     "entry": null,
