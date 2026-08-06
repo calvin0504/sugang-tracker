@@ -121,7 +121,7 @@ function renderRows() {
     const st = statusOf(s);
     const info = state.status[s.id];
     const meta = STATUS_META[st];
-    const why = st === 'error' ? info?.error : st === 'detected' ? info?.detail : '';
+    const why = st === 'error' ? info?.error : (st === 'detected' || st === 'not_detected') ? info?.detail : '';
     const fetchCell = renderFetchCell(s);
     // notes와 26-1/26-2 기간 열은 당분간 숨김 (schools.json의 notes가 운영 메모 성격이라 노출 부적합)
     return `<tr>
@@ -146,10 +146,16 @@ function renderRows() {
     rows.join('') || '<tr class="empty-row"><td colspan="7">조건에 맞는 학교가 없습니다</td></tr>';
 }
 
+// blockers262의 「분류 — 상세」에서 분류만 뽑아 셀에 노출 (상세는 title 툴팁)
+function blockerShort(text) {
+  return String(text ?? '').split(' — ')[0];
+}
+
 function renderFetchCell(school) {
   const st = fetchStateOf(school);
   const spec = state.scrapers[school.id];
   const log = state.fetchLog[school.id];
+  const blocker = spec?.blockers262;
   switch (st) {
     case 'fetched': {
       const files = (log.outputs ?? [])
@@ -162,10 +168,12 @@ function renderFetchCell(school) {
     case 'waiting':
       return `<span class="fetch waiting" title="npm run fetch 로 수집 실행">⏳ 수집 대기</span>`;
     case 'not_ready':
-      return `<span class="fetch not-ready" title="${esc(spec?.blockers262 ?? '')}">🔧 수집기 준비 필요</span>`;
+      return `<span class="fetch not-ready" title="${esc(blocker ?? '')}">🔧 ${esc(blockerShort(blocker) || '수집기 준비 필요')}</span>`;
     case 'none':
+      if (blocker) return `<span class="fetch not-ready" title="${esc(blocker)}">🚫 ${esc(blockerShort(blocker))}</span>`;
       return '<span class="fetch none">-</span>';
     default:
+      if (blocker) return `<span class="fetch idle" title="${esc(blocker)}">⏳ ${esc(blockerShort(blocker))}</span>`;
       return `<span class="fetch idle" title="편람 감지되면 수집 대상이 됩니다">대기</span>`;
   }
 }
