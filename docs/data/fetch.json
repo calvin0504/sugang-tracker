@@ -504,5 +504,22 @@
     ],
     "minRows": 650,
     "logTail": null
+  },
+  "inha": {
+    "ok": true,
+    "fetchedAt": "2026-08-06T16:19:10.391Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 100663,
+    "outputs": [
+      {
+        "path": "data_26_2/inha(2026-2).xlsx",
+        "bytes": 95977,
+        "fresh": true,
+        "rows": 1205
+      }
+    ],
+    "minRows": 480,
+    "logTail": null
   }
 }

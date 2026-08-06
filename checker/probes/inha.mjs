@@ -1,6 +1,8 @@
 // 인하대: ASP.NET WebForms 그리드 페이지라 키워드 감지 불가(폼+그리드만) —
 // 학기 셀렉트(#ddlYearterm)를 20262로 맞추고 조회(#ibtnSearch)해 본문 크기로 판정한다.
 // 실측: 결과 있는 학기 ~39,000자, 빈 폼 ~2,400자.
+// 2026-08-07: 20262는 학과 지정 조회(catalogUrl의 strDept=0092 기계공학과)가 빈 결과를
+// 주는 상태라 개설학과(#ddlMidCode)를 "전체"로 되돌리고 조회해야 한다(전체는 488행 정상).
 const LEN_THRESHOLD = 10000;
 
 export default async function probe(page, school) {
@@ -17,6 +19,8 @@ export default async function probe(page, school) {
   async function query(term) {
     await page.selectOption('#ddlYearterm', term);
     await page.waitForTimeout(2000);
+    await page.selectOption('#ddlMidCode', '').catch(() => {}); // 개설학과 전체
+    await page.waitForTimeout(3000);
     await page.click('#ibtnSearch');
     await page.waitForTimeout(8000);
     return page.evaluate(() => document.body.innerText.length);

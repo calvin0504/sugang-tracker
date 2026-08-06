@@ -189,11 +189,11 @@
     "firstDetectedAt": "2026-07-15T19:45:35.939Z"
   },
   "inha": {
-    "status": "not_detected",
-    "lastChecked": "2026-08-06T15:25:47.310Z",
-    "detail": "2026-2 조회 결과 없음 (2505자, 컨트롤은 40709자 정상)",
+    "status": "detected",
+    "lastChecked": "2026-08-06T16:23:05.588Z",
+    "detail": "2026-2 시간표 그리드 렌더링 확인 (본문 42,450자)",
     "error": null,
-    "firstDetectedAt": null
+    "firstDetectedAt": "2026-08-06T16:23:05.589Z"
   },
   "knu": {
     "status": "detected",
