@@ -168,5 +168,11 @@
     "rows": 4425,
     "file": "data_26_2/hanyang(2026-2).xlsx",
     "sentAt": "2026-08-06T14:57:05.000Z"
+  },
+  "ssu": {
+    "hash": "dd0765ec813ecdeb3a01bd56d1ec6ef1425af8d2c741399a521185fdda4e379d",
+    "rows": 494,
+    "file": "data_26_2/ssu(2026-2).xlsx",
+    "sentAt": "2026-08-06T15:10:50.000Z"
   }
 }
