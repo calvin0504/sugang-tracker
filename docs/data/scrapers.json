@@ -109,7 +109,8 @@
     ],
     "minRows": 750,
     "blockers262": "",
-    "notes": "Python+Selenium+Chrome 필요. 캠퍼스×전공 전수 순회라 오래 걸림. \"미게시\"로 보였던 건 랜딩 키워드 미탐이었고 실제론 2026-2 조회 가능(2026-08-06 확인, 프로브 전환) — 수집기는 무수정 사용 가능"
+    "notes": "Python+Selenium+Chrome 필요. 캠퍼스×전공 전수 순회라 오래 걸림. \"미게시\"로 보였던 건 랜딩 키워드 미탐이었고 실제론 2026-2 조회 가능(2026-08-06 확인, 프로브 전환) — 수집기는 무수정 사용 가능",
+    "uploadType": "KYUNGHEE"
   },
   "sejong": {
     "entry": "node scrap_source/scrap_sju.js",

@@ -78,10 +78,10 @@
     "sentAt": "2026-07-17T13:23:57.389Z"
   },
   "sogang": {
-    "hash": "dab523737ae5f53d94966092798f59d8385d90e64ecfcddb76daf21acbda9de4",
-    "rows": 230,
+    "hash": "30043147ef02c7d4d9aa15fb1b5ebcd26486a8738ddd31877f1d4799c4d2aa1a",
+    "rows": 923,
     "file": "data_26_2/sogang(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:24:04.802Z"
+    "sentAt": "2026-08-06T15:00:54.000Z"
   },
   "pusan": {
     "hash": "1c5c6fa6dfc11505fab18ceb4f96658e077be6760ba7095a47063b25e5555d8e",
@@ -96,10 +96,10 @@
     "sentAt": "2026-07-17T13:28:33.083Z"
   },
   "kw": {
-    "hash": "08527844f70f15e534bc4ab8b82ea30bdb4f7371ebbd69dff5eea768bed04086",
-    "rows": 484,
+    "hash": "6b1b5b9ea07e53abf9866b8a5bdcc83a28ff167f780c694afdc8f9b27074377d",
+    "rows": 534,
     "file": "data_26_2/kw(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:28:50.328Z"
+    "sentAt": "2026-08-06T15:01:12.000Z"
   },
   "sookmyung": {
     "hash": "eb826aaa7b6f1eb87117080d77417174e9176598c79a5e97511092c2ce61fa46",
@@ -108,10 +108,10 @@
     "sentAt": "2026-07-17T13:29:11.342Z"
   },
   "sungshin": {
-    "hash": "0f0d7cfad3f29f1e9e09409210547fe5d8f8ac5ea588cbecf96de639eabd0115",
-    "rows": 466,
+    "hash": "abbebaabec2b75b0cc246386753a7dfa39467a8c56cc5dfbb1aa460b226cddb0",
+    "rows": 469,
     "file": "data_26_2/sungshin(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:29:31.985Z"
+    "sentAt": "2026-08-06T15:02:38.000Z"
   },
   "knu": {
     "hash": "31ec6357c10314bab3218e6f98fce36e0f58fc4b91bfbfd46a3e13585b2f4628",
@@ -134,9 +134,39 @@
     "note": "사용자 수동 업로드분과 동일 내용 — 서버 dryRun unchanged 확인으로 기록"
   },
   "ewha": {
-    "hash": "3a3c83667149b528117349abffe6a8eed6190de4b3506546cd29f1c52266ccf8",
-    "rows": 1487,
+    "hash": "cbf0269e9b04858bce978b918586e455972bc3e8db0048407f83997394b5af56",
+    "rows": 1493,
     "file": "data_26_2/ehwa(2026-2).xlsx",
-    "sentAt": "2026-07-19T18:14:43.202Z"
+    "sentAt": "2026-08-06T15:02:21.000Z"
+  },
+  "korea": {
+    "hash": "713dd456c277e486da4afdc51870afd05d4f1605e6fd9112cb62030e2e35acc7",
+    "rows": 2198,
+    "file": "data_26_2/korea(2026-2).xlsx",
+    "sentAt": "2026-08-06T14:35:02.000Z"
+  },
+  "khu": {
+    "hash": "0ff4c11938c020566cd1fcba4eaf12db998edcf2a85bdb4cd866824a37abbfb8",
+    "rows": 1613,
+    "file": "data_26_2/kyunghee(2026-2).xlsx",
+    "sentAt": "2026-08-06T14:36:25.000Z"
+  },
+  "kookmin": {
+    "hash": "1f84195bd6a4d5b6330e9839bd539b777da1b59b4343f8b537eabcfd8f5f0a8b",
+    "rows": 903,
+    "file": "data_26_2/kookmin(2026-2).xlsx",
+    "sentAt": "2026-08-06T14:37:08.000Z"
+  },
+  "unist": {
+    "hash": "8f2c36c94598faf2de1cc70380dc6c3f70526a42add03ddcbabbbd6215ebfbaa",
+    "rows": 556,
+    "file": "data_26_2/unist(2026-2).xlsx",
+    "sentAt": "2026-08-06T14:37:30.000Z"
+  },
+  "hanyang": {
+    "hash": "42891da3aa35b19dd9f68e31ed76d8082dab4b0d24c37ed1ed012ae454b8f0e4",
+    "rows": 4425,
+    "file": "data_26_2/hanyang(2026-2).xlsx",
+    "sentAt": "2026-08-06T14:57:05.000Z"
   }
 }
