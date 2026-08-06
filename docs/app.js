@@ -61,14 +61,18 @@ function counts() {
   const c = {
     all: state.schools.length,
     detected: 0, not_detected: 0, error: 0, manual: 0, unchecked: 0,
-    confirmed: 0, fetched: 0, withScraper: 0, uploaded: 0,
+    confirmed: 0, fetched: 0, withScraper: 0, uploaded: 0, uploadedRows: 0,
   };
   for (const s of state.schools) {
     c[statusOf(s)]++;
     if (s.period262) c.confirmed++;
     if (state.scrapers[s.id]?.entry) c.withScraper++;
     if (fetchStateOf(s) === 'fetched') c.fetched++;
-    if (state.uploadLog[s.id]?.sentAt) c.uploaded++;
+    const up = state.uploadLog[s.id];
+    if (up?.sentAt) {
+      c.uploaded++;
+      if (typeof up.rows === 'number') c.uploadedRows += Math.max(0, up.rows - 1);
+    }
   }
   return c;
 }
@@ -80,7 +84,7 @@ function renderTiles() {
     { key: 'not_detected', num: c.not_detected, label: '⚪ 미감지' },
     { key: 'error', num: c.error, label: '🔴 오류' },
     { key: 'manual', num: c.manual, label: '🟡 수동 확인' },
-    { key: 'all', num: `${c.uploaded}/${c.fetched}`, label: '📦 DB 적재 완료' },
+    { key: 'all', num: `${c.uploaded}/${c.fetched}`, label: `📦 DB 적재 · ${c.uploadedRows.toLocaleString()}행` },
     { key: 'all', num: `${c.fetched}/${c.withScraper}`, label: '📥 시간표 수집' },
   ];
   document.getElementById('tiles').innerHTML = tiles
@@ -182,8 +186,10 @@ function renderFetchCell(school) {
 function renderUploadCell(school) {
   const up = state.uploadLog[school.id];
   if (up?.sentAt) {
-    const title = `${up.file ?? ''} ${typeof up.rows === 'number' ? `${up.rows.toLocaleString()}행` : ''}`.trim();
-    return `<span class="fetch fetched" title="${esc(title)}">📦 적재됨 <span class="fetch-time">${fmtTime(up.sentAt)}</span></span>`;
+    // upload.json의 rows는 헤더 포함 — 표시할 땐 데이터 행수로
+    const n = typeof up.rows === 'number' ? Math.max(0, up.rows - 1) : null;
+    const title = `${up.file ?? ''} 전송 ${fmtTime(up.sentAt)}`.trim();
+    return `<span class="fetch fetched" title="${esc(title)}">📦 ${n != null ? `${n.toLocaleString()}행` : '적재됨'} <span class="fetch-time">${fmtTime(up.sentAt)}</span></span>`;
   }
   if (fetchStateOf(school) === 'fetched') {
     return '<span class="fetch waiting" title="수집됐지만 아직 DB 미전송 — node checker/upload.mjs">⏳ 미적재</span>';
