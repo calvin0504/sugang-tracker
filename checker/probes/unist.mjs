@@ -12,15 +12,25 @@ export default async function probe(page) {
       detail: 's4hana 서버 접속 실패 — 셧다운 또는 URL 재변경 여부 확인 필요',
     };
   }
-  await page.waitForTimeout(12000); // WebDynpro 초기 렌더링
+  // WebDynpro 초기 렌더링 — 느린 CI 러너에서 고정 12초로는 부족했던 사례가 있어
+  // 콤보 등장을 최대 45초까지 대기하고, 실패 시 본문을 담아 차단/구조변경을 구분한다
+  try {
+    await page.waitForSelector('input[lsdata]', { timeout: 45000 });
+  } catch {
+    const text = (await page.evaluate(() => document.body?.innerText ?? '').catch(() => ''))
+      .replace(/\s+/g, ' ')
+      .trim();
+    return {
+      status: 'error',
+      error: `콤보 렌더링 실패(45초) — 본문 ${text.length}자: "${text.slice(0, 100)}"`,
+    };
+  }
+  await page.waitForTimeout(3000); // 콤보 값 채워질 시간
 
   // 화면 콤보 input 순서: 학년도, 학기, 학위과정, 학부/대학원, 학과(부), 전공
   const values = await page.$$eval('input[lsdata]', (els) =>
     els.filter((e) => e.offsetWidth || e.offsetHeight).map((e) => e.value),
   );
-  if (!values.length) {
-    return { status: 'error', error: '콤보 렌더링 실패 — 페이지 구조 변경 여부 확인 필요' };
-  }
   const hasYear = values.some((v) => v.includes('2026'));
   const hasSem = values.some((v) => /2\s*학기/.test(v));
   if (hasYear && hasSem) {
