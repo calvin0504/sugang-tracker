@@ -1,7 +1,11 @@
 // 대시보드: docs/data/schools.json(마스터) + docs/data/status.json(체커 결과)
 // + docs/data/scrapers.json(수집기 매핑) + docs/data/fetch.json(수집 결과)
 // + docs/data/upload.json(DB 적재 기록, checker/upload.mjs)을 읽어 렌더링.
-const state = { schools: [], status: {}, scrapers: {}, fetchLog: {}, uploadLog: {}, filter: 'all', query: '' };
+// DB 적재 현황은 운영 서버 status API(CORS *)를 직접 불러 실시간 표시하고,
+// API 실패 시 upload.json(전송 파일 기록)으로 폴백한다.
+const DB_STATUS_API =
+  'https://apiv2.bagstrap.team/api/v1/bulk/school-course/v2/status?academyYear=2026&semester=2';
+const state = { schools: [], status: {}, scrapers: {}, fetchLog: {}, uploadLog: {}, dbStatus: null, filter: 'all', query: '' };
 
 const STATUS_META = {
   detected: { label: '편람 감지', order: 0 },
@@ -68,8 +72,12 @@ function counts() {
     if (s.period262) c.confirmed++;
     if (state.scrapers[s.id]?.entry) c.withScraper++;
     if (fetchStateOf(s) === 'fetched') c.fetched++;
+    const live = dbEntryOf(s);
     const up = state.uploadLog[s.id];
-    if (up?.sentAt) {
+    if (live) {
+      c.uploaded++;
+      c.uploadedRows += live.openCourses;
+    } else if (up?.sentAt) {
       c.uploaded++;
       if (typeof up.rows === 'number') c.uploadedRows += Math.max(0, up.rows - 1);
     }
@@ -84,7 +92,7 @@ function renderTiles() {
     { key: 'not_detected', num: c.not_detected, label: '⚪ 미감지' },
     { key: 'error', num: c.error, label: '🔴 오류' },
     { key: 'manual', num: c.manual, label: '🟡 수동 확인' },
-    { key: 'all', num: `${c.uploaded}/${c.fetched}`, label: `📦 DB 적재 · ${c.uploadedRows.toLocaleString()}행` },
+    { key: 'all', num: `${c.uploaded}/${c.fetched}`, label: `📦 DB 적재 · ${c.uploadedRows.toLocaleString()}강좌${state.dbStatus ? ' ⚡실시간' : ''}` },
     { key: 'all', num: `${c.fetched}/${c.withScraper}`, label: '📥 시간표 수집' },
   ];
   document.getElementById('tiles').innerHTML = tiles
@@ -182,13 +190,26 @@ function renderFetchCell(school) {
   }
 }
 
-// DB 적재 상태: upload.json 기록 기준 (checker/upload.mjs가 전송 성공 시 기록)
+// 서버 DB의 학교(type) 키: 대문자 학교 id, 예외는 scrapers.json uploadType (kmu→KYE 등)
+function dbEntryOf(school) {
+  const type = state.scrapers[school.id]?.uploadType ?? school.id.toUpperCase();
+  return state.dbStatus?.byType[type] ?? null;
+}
+
+// DB 적재 상태: 서버 status API 실시간 우선, 실패 시 upload.json(전송 기록) 폴백
 function renderUploadCell(school) {
+  const live = dbEntryOf(school);
+  if (live) {
+    // 서버 lastModifiedAt은 KST 표기(타임존 없음)
+    const at = fmtTime(`${live.lastModifiedAt}+09:00`);
+    const title = `서버 DB 실시간 — 총 ${live.totalCourses.toLocaleString()} (개설 ${live.openCourses.toLocaleString()} / 폐강 ${live.closedCourses.toLocaleString()})`;
+    return `<span class="fetch fetched" title="${esc(title)}">📦 ${live.openCourses.toLocaleString()}강좌 <span class="fetch-time">${at}</span></span>`;
+  }
   const up = state.uploadLog[school.id];
   if (up?.sentAt) {
     // upload.json의 rows는 헤더 포함 — 표시할 땐 데이터 행수로
     const n = typeof up.rows === 'number' ? Math.max(0, up.rows - 1) : null;
-    const title = `${up.file ?? ''} 전송 ${fmtTime(up.sentAt)}`.trim();
+    const title = `전송 파일 기준(서버 응답 없음) — ${up.file ?? ''} 전송 ${fmtTime(up.sentAt)}`.trim();
     return `<span class="fetch fetched" title="${esc(title)}">📦 ${n != null ? `${n.toLocaleString()}행` : '적재됨'} <span class="fetch-time">${fmtTime(up.sentAt)}</span></span>`;
   }
   if (fetchStateOf(school) === 'fetched') {
@@ -229,18 +250,22 @@ document.getElementById('search').addEventListener('input', (e) => {
 
 async function load() {
   const bust = `?t=${Date.now()}`;
-  const [schools, status, scrapers, fetchLog, uploadLog] = await Promise.all([
+  const [schools, status, scrapers, fetchLog, uploadLog, dbStatus] = await Promise.all([
     fetch(`data/schools.json${bust}`).then((r) => r.json()),
     fetch(`data/status.json${bust}`).then((r) => r.json()).catch(() => ({})),
     fetch(`data/scrapers.json${bust}`).then((r) => r.json()).catch(() => ({})),
     fetch(`data/fetch.json${bust}`).then((r) => r.json()).catch(() => ({})),
     fetch(`data/upload.json${bust}`).then((r) => r.json()).catch(() => ({})),
+    fetch(DB_STATUS_API, { cache: 'no-store' }).then((r) => r.json()).catch(() => null),
   ]);
   state.schools = schools;
   state.status = status;
   state.scrapers = scrapers;
   state.fetchLog = fetchLog;
   state.uploadLog = uploadLog;
+  state.dbStatus = dbStatus?.schools
+    ? { total: dbStatus.totalCourses, byType: Object.fromEntries(dbStatus.schools.map((s) => [s.type, s])) }
+    : null;
   render();
 }
 
