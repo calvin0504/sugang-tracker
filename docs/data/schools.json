@@ -77,8 +77,8 @@
     "code": "UNIST",
     "ref261": "2026.02.05 ~ 02.06",
     "period262": "",
-    "catalogUrl": "https://uspap5.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko#",
-    "notes": "학기 사이엔 SAP 서버 방화벽 폐쇄 — 서버 3대(uspap5/uspap3/uspdbsvc) 순차 프로브, 재개 자체가 임박 신호 (8월 초 예상)",
+    "catalogUrl": "https://s4hana.unist.ac.kr/sap/bc/webdynpro/sap/zcmw5223_hp?sap-language=ko#",
+    "notes": "2026-08 SAP이 S/4HANA(s4hana.unist.ac.kr/zcmw5223_hp)로 이전 — 구 uspap5/uspap3/uspdbsvc 서버 폐기. 신규 페이지는 공개(로그인 불필요)",
     "check": {
       "type": "probe"
     }
@@ -102,9 +102,9 @@
     "ref261": "2026.02.03 ~ 02.09",
     "period262": "",
     "catalogUrl": "https://sugang.khu.ac.kr/",
-    "notes": "26-1 기준 유지 대학원: 관광·교육·대학원·아트퓨전디자인·체육·테크노경영 (이외 제거)",
+    "notes": "26-1 기준 유지 대학원: 관광·교육·대학원·아트퓨전디자인·체육·테크노경영 (이외 제거) / 랜딩이 iframe 조회 폼이라 키워드 미탐 → 2026-08-06 프로브 전환(종합시간표 조회 실조회)",
     "check": {
-      "type": "keyword"
+      "type": "probe"
     }
   },
   {

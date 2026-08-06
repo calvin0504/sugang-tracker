@@ -453,5 +453,39 @@
     ],
     "minRows": 1800,
     "logTail": null
+  },
+  "unist": {
+    "ok": true,
+    "fetchedAt": "2026-08-06T08:17:27.725Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 1694597,
+    "outputs": [
+      {
+        "path": "data_26_2/unist(2026-2).xlsx",
+        "bytes": 46545,
+        "fresh": true,
+        "rows": 556
+      }
+    ],
+    "minRows": 90,
+    "logTail": null
+  },
+  "khu": {
+    "ok": true,
+    "fetchedAt": "2026-08-06T08:27:16.278Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 588399,
+    "outputs": [
+      {
+        "path": "data_26_2/kyunghee(2026-2).xlsx",
+        "bytes": 170343,
+        "fresh": true,
+        "rows": 1613
+      }
+    ],
+    "minRows": 750,
+    "logTail": null
   }
 }

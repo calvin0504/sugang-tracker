@@ -1,33 +1,33 @@
-// UNIST: SAP 편람 서버(zcmw5223)가 학기 사이에는 방화벽으로 닫혀 있음.
-// 앱서버 3대를 순차 시도 — 하나라도 열리면 그 자체가 임박 신호이고, 열린 페이지에서 키워드 확인.
-const URLS = [
-  'https://uspap5.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko',
-  'https://uspap3.unist.ac.kr:8443/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko',
-  'https://uspdbsvc.unist.ac.kr:44401/sap/bc/webdynpro/sap/zcmw5223?sap-language=ko',
-];
+// UNIST: 2026-08 SAP 시스템이 S/4HANA(s4hana.unist.ac.kr/zcmw5223_hp)로 이전됨 —
+// 구 uspap5/uspap3/uspdbsvc 서버 프로브 폐기. 신규 페이지는 로그인 없이 공개이며,
+// 학년도/학기 콤보 기본값이 2026학년도/2 학기면 편람 게시로 판정한다.
+const URL = 'https://s4hana.unist.ac.kr/sap/bc/webdynpro/sap/zcmw5223_hp?sap-language=ko';
 
 export default async function probe(page) {
-  for (const url of URLS) {
-    try {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-    } catch {
-      continue; // 이 호스트는 닫힘 — 다음 후보
-    }
-    await page.waitForTimeout(12000);
-    let text = '';
-    for (const frame of page.frames()) {
-      try {
-        text += await frame.evaluate(() => document.body?.innerText ?? '');
-      } catch {}
-    }
-    const host = new URL(url).host;
-    if (text.includes('2026') && (text.includes('2학기') || /fall/i.test(text))) {
-      return { status: 'detected', detail: `${host} 에서 2026-2 확인` };
-    }
-    return { status: 'not_detected', detail: `${host} 접속됨(서버 재개!) — 2026-2 표기는 아직 없음` };
+  try {
+    await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  } catch {
+    return {
+      status: 'not_detected',
+      detail: 's4hana 서버 접속 실패 — 셧다운 또는 URL 재변경 여부 확인 필요',
+    };
+  }
+  await page.waitForTimeout(12000); // WebDynpro 초기 렌더링
+
+  // 화면 콤보 input 순서: 학년도, 학기, 학위과정, 학부/대학원, 학과(부), 전공
+  const values = await page.$$eval('input[lsdata]', (els) =>
+    els.filter((e) => e.offsetWidth || e.offsetHeight).map((e) => e.value),
+  );
+  if (!values.length) {
+    return { status: 'error', error: '콤보 렌더링 실패 — 페이지 구조 변경 여부 확인 필요' };
+  }
+  const hasYear = values.some((v) => v.includes('2026'));
+  const hasSem = values.some((v) => /2\s*학기/.test(v));
+  if (hasYear && hasSem) {
+    return { status: 'detected', detail: `s4hana 기본 학기 2026-2 확인 (${values[0]} / ${values[1]})` };
   }
   return {
     status: 'not_detected',
-    detail: 'SAP 서버 3곳 모두 미개방(학기 간 셧다운) — 서버 재개 자체가 임박 신호, 8월 초 예상',
+    detail: `기본 학기가 2026-2 아님: ${values.filter(Boolean).slice(0, 2).join(' / ')}`,
   };
 }

@@ -79,12 +79,13 @@
     "cwd": ".",
     "mode": "auto",
     "ready262": true,
+    "timeoutMin": 60,
     "expectedOutputs": [
       "data_26_2/unist(2026-2).xlsx"
     ],
     "minRows": 90,
-    "blockers262": "학교 미개방 — SAP 조회 서버 3곳이 학기 간 셧다운 중(8월 초·중순 재개 예상). 서버가 열리면 프로브가 감지하고 npm run fetch unist 실행하면 됨(수집기 준비 완료)",
-    "notes": "GUI 필요(headless:false). 사이트 기본 학기를 긁으므로 2026-2 전환 후 실행. 대학원만"
+    "blockers262": "",
+    "notes": "2026-08-06 S/4HANA 이전 대응 재작성 — Playwright 헤드리스(GUI 불필요, 루트 node_modules). lsdata 기반 콤보 탐색 + cc 기반 그리드 파싱, 2026/2학기 명시 선택. MA/DR/MP만 수집(신규 UM 학·석사통합 제외). 신규 그리드에 정원 컬럼 추가됐으나 산출 컬럼은 26-1과 동일"
   },
   "hanyang": {
     "entry": "node scrap_source/scrap_hanyang.js",
@@ -107,8 +108,8 @@
       "data_26_2/kyunghee(2026-2).xlsx"
     ],
     "minRows": 750,
-    "blockers262": "학교 미게시 — 26-2 편람이 아직 안 올라옴(키워드 미검출). 게시되면 프로브가 감지하고 npm run fetch khu 실행하면 됨(수집기 준비 완료)",
-    "notes": "Python+Selenium+Chrome 필요. 캠퍼스×전공 전수 순회라 오래 걸림"
+    "blockers262": "",
+    "notes": "Python+Selenium+Chrome 필요. 캠퍼스×전공 전수 순회라 오래 걸림. \"미게시\"로 보였던 건 랜딩 키워드 미탐이었고 실제론 2026-2 조회 가능(2026-08-06 확인, 프로브 전환) — 수집기는 무수정 사용 가능"
   },
   "sejong": {
     "entry": "node scrap_source/scrap_sju.js",
