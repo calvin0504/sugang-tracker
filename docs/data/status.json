@@ -56,9 +56,9 @@
     "firstDetectedAt": "2026-07-15T20:17:33.039Z"
   },
   "unist": {
-    "status": "not_detected",
-    "lastChecked": "2026-08-06T15:25:47.310Z",
-    "detail": "s4hana 서버 접속 실패 — 셧다운 또는 URL 재변경 여부 확인 필요",
+    "status": "detected",
+    "lastChecked": "2026-08-06T08:28:03.100Z",
+    "detail": "s4hana 기본 학기 2026-2 확인 (2026학년도 / 2 학기) — 야간엔 서버 셧다운으로 접속 불가 관찰",
     "error": null,
     "firstDetectedAt": "2026-08-06T08:28:03.100Z"
   },

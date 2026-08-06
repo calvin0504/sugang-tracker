@@ -143,8 +143,17 @@ await browser.close();
 
 const nextStatus = { ...prevStatus };
 const changes = [];
-for (const { school, result } of results) {
+for (let { school, result } of results) {
   const prev = prevStatus[school.id];
+  // 감지는 "편람 오픈"이라는 단방향 게이트 — 한 번 detected 된 학교가 미감지/오류로
+  // 돌아오는 건 사실상 전부 프로브 글리치(해외 IP 차단·타임아웃 등, 예: unist s4hana가
+  // Actions IP를 차단)다. detected 를 유지하되 이번 체크 결과를 detail에 남긴다.
+  if (prev?.status === 'detected' && result.status !== 'detected') {
+    result = {
+      status: 'detected',
+      detail: `감지 유지 — 이번 체크 ${result.status}: ${result.detail ?? result.error ?? ''}`.trim(),
+    };
+  }
   const entry = {
     status: result.status,
     lastChecked: nowIso(),
