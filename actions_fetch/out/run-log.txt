@@ -8,7 +8,7 @@
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
-[INFO] results = 68
+[INFO] results = 69
 [Campus] 비즈니스IT대학원 (36418)
 [INFO] results = 29
 [Campus] AIㆍSW대학원 (36433)
@@ -21,7 +21,7 @@
 [Campus] 경영대학원 (30120)
 [INFO] results = 45
 [Campus] 행정대학원 (30147)
-[INFO] results = 32
+[INFO] results = 31
 [Campus] 자동차산업대학원 (30704)
 [INFO] results = 5
 [Campus] 디자인대학원 (30180)
