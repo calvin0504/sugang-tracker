@@ -17,7 +17,7 @@
 [INFO] results = 0
 [DEBUG] body head = {"lectureRoms":{"results":[],"totalCount":0,"empty":true},"prohibitType":"NONE","searchCount":null,"invalidCode":null,"warningMessage":null}
 [Campus] 교육대학원 (30091)
-[INFO] results = 92
+[INFO] results = 93
 [Campus] 경영대학원 (30120)
 [INFO] results = 45
 [Campus] 행정대학원 (30147)
@@ -41,6 +41,6 @@
 [Campus] 글로벌평화ㆍ통일대학원 (36379)
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
-[INFO] results = 0
-[3/3] 저장 시작. totalRows = 1006
+[INFO] results = 11
+[3/3] 저장 시작. totalRows = 1018
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
