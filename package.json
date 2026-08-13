@@ -9,6 +9,7 @@
     "dashboard": "npx http-server docs -p 8173 -c-1"
   },
   "dependencies": {
-    "playwright": "^1.49.0"
+    "playwright": "^1.49.0",
+    "undici": "^8.10.0"
   }
 }

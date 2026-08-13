@@ -49,6 +49,10 @@ const ACADEMY_YEAR = 2026;
 const SEMESTER = '2';
 
 const ExcelJS = createRequire(path.join(SCHOOLCOURSE_DIR, 'package.json'))('exceljs');
+// Node 내장 fetch에 외부 undici Agent를 넘기면 버전 인터페이스 불일치로 즉시 실패
+// (UND_ERR_INVALID_ARG: invalid onRequestStart method) — 반드시 undici 자체 fetch와 짝지어 쓴다.
+const { Agent, fetch: undiciFetch } = createRequire(import.meta.url)('undici');
+const uploadDispatcher = new Agent({ headersTimeout: 1800000, bodyTimeout: 1800000 });
 
 async function readJson(file, fallback) {
   try {
@@ -91,11 +95,15 @@ async function sendOne(id, filePath) {
 
   const form = new FormData();
   form.append('file', new Blob([await readFile(filePath)]), path.basename(filePath));
-  const res = await fetch(url, {
+  const res = await undiciFetch(url, {
     method: 'POST',
     headers: key ? { Authorization: `Bearer ${key}` } : {},
     body: form,
-    signal: AbortSignal.timeout(600000), // 대용량 파싱 대기 (snu/yonsei 5천행급은 300초 초과 사례 있음)
+    signal: AbortSignal.timeout(1800000), // 대용량 파싱 대기 (snu/yonsei 5천행급은 300초 초과 사례 있음)
+    // AbortSignal만으론 부족 — undici 기본 headersTimeout(300초)이 따로 걸려서
+    // 서버가 대용량 파싱에 5분을 넘기면 응답 직전에 fetch failed가 남 (2026-08-13 kaist/pusan/skku 실증:
+    // 클라이언트는 실패로 기록했지만 서버는 반영 완료). dispatcher로 30분까지 허용.
+    dispatcher: uploadDispatcher,
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
   return res.json().catch(() => ({}));

@@ -1,46 +1,50 @@
 {
   "sejong": {
     "ok": true,
-    "fetchedAt": "2026-07-14T17:11:51.402Z",
+    "fetchedAt": "2026-08-13T07:06:47.765Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 405806,
+    "durationMs": 431097,
     "outputs": [
       {
         "path": "data_26_2/sju(2026-2).xlsx",
-        "bytes": 73088,
-        "fresh": true
+        "bytes": 77468,
+        "fresh": true,
+        "rows": 1078
       }
     ],
+    "minRows": 440,
     "logTail": null
   },
   "yonsei": {
     "ok": true,
-    "fetchedAt": "2026-07-14T17:57:52.821Z",
-    "exitCode": null,
-    "earlyExit": true,
-    "durationMs": 2734285,
+    "fetchedAt": "2026-08-13T09:52:58.488Z",
+    "exitCode": 0,
+    "earlyExit": false,
+    "durationMs": 5619495,
     "outputs": [
       {
         "path": "data_26_2/yonsei(2026-2).xlsx",
-        "bytes": 387837,
-        "fresh": true
+        "bytes": 499513,
+        "fresh": true,
+        "rows": 7126
       }
     ],
+    "minRows": 1300,
     "logTail": null
   },
   "cau": {
     "ok": true,
-    "fetchedAt": "2026-07-15T17:41:17.151Z",
+    "fetchedAt": "2026-08-13T06:59:36.557Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 481922,
+    "durationMs": 478734,
     "outputs": [
       {
         "path": "data_26_2/cau(2026_2).xlsx",
-        "bytes": 283343,
+        "bytes": 291315,
         "fresh": true,
-        "rows": 2328
+        "rows": 2382
       }
     ],
     "minRows": 950,
@@ -48,16 +52,16 @@
   },
   "gist": {
     "ok": true,
-    "fetchedAt": "2026-07-15T17:48:18.498Z",
+    "fetchedAt": "2026-08-13T06:49:36.124Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 421286,
+    "durationMs": 12802,
     "outputs": [
       {
         "path": "data_26_2/gist(2026-2).xlsx",
-        "bytes": 20400,
+        "bytes": 25293,
         "fresh": true,
-        "rows": 199
+        "rows": 244
       }
     ],
     "minRows": 90,
@@ -65,16 +69,16 @@
   },
   "postech": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:45:32.014Z",
+    "fetchedAt": "2026-08-13T07:08:22.420Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 94896,
+    "durationMs": 94624,
     "outputs": [
       {
         "path": "data_26_2/postech(2026-2).xlsx",
-        "bytes": 33838,
+        "bytes": 34721,
         "fresh": true,
-        "rows": 313
+        "rows": 316
       }
     ],
     "minRows": 120,
@@ -82,16 +86,16 @@
   },
   "ajou": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:45:58.090Z",
+    "fetchedAt": "2026-08-13T08:01:08.605Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 26017,
+    "durationMs": 25890,
     "outputs": [
       {
         "path": "data_26_2/ajou(2026-2).xlsx",
-        "bytes": 79110,
+        "bytes": 79622,
         "fresh": true,
-        "rows": 664
+        "rows": 665
       }
     ],
     "minRows": 250,
@@ -99,16 +103,16 @@
   },
   "hufs": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:48:11.912Z",
+    "fetchedAt": "2026-08-13T08:03:27.437Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 133715,
+    "durationMs": 138721,
     "outputs": [
       {
         "path": "data_26_2/hufs(2026-2).xlsx",
-        "bytes": 188778,
+        "bytes": 211999,
         "fresh": true,
-        "rows": 1901
+        "rows": 2061
       }
     ],
     "minRows": 400,
@@ -116,16 +120,16 @@
   },
   "konkuk": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:48:33.474Z",
+    "fetchedAt": "2026-08-13T08:03:47.172Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 21530,
+    "durationMs": 19698,
     "outputs": [
       {
         "path": "data_26_2/konkuk(2026-2).xlsx",
-        "bytes": 83037,
+        "bytes": 95113,
         "fresh": true,
-        "rows": 884
+        "rows": 1011
       }
     ],
     "minRows": 400,
@@ -133,16 +137,16 @@
   },
   "hongik": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:51:53.024Z",
+    "fetchedAt": "2026-08-13T08:19:18.686Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 199490,
+    "durationMs": 198762,
     "outputs": [
       {
         "path": "data_26_2/hongik(2026-2).xlsx",
-        "bytes": 78811,
+        "bytes": 83539,
         "fresh": true,
-        "rows": 1017
+        "rows": 1021
       }
     ],
     "minRows": 400,
@@ -150,16 +154,16 @@
   },
   "pusan": {
     "ok": true,
-    "fetchedAt": "2026-07-16T06:48:54.277Z",
+    "fetchedAt": "2026-08-13T06:49:39.179Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 2584,
+    "durationMs": 2768,
     "outputs": [
       {
         "path": "data_26_2/pusan(2026-2).xlsx",
-        "bytes": 275324,
+        "bytes": 278541,
         "fresh": true,
-        "rows": 2816
+        "rows": 2840
       }
     ],
     "minRows": 1000,
@@ -167,16 +171,16 @@
   },
   "ssu": {
     "ok": true,
-    "fetchedAt": "2026-08-03T16:04:48.352Z",
+    "fetchedAt": "2026-08-13T08:12:06.865Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 111588,
+    "durationMs": 95784,
     "outputs": [
       {
         "path": "data_26_2/ssu(2026-2).xlsx",
-        "bytes": 56037,
+        "bytes": 58654,
         "fresh": true,
-        "rows": 494
+        "rows": 512
       }
     ],
     "minRows": 200,
@@ -184,16 +188,16 @@
   },
   "kookmin": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:57:04.132Z",
+    "fetchedAt": "2026-08-13T10:15:53.711Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 44290,
+    "durationMs": 51944,
     "outputs": [
       {
         "path": "data_26_2/kookmin(2026-2).xlsx",
-        "bytes": 67009,
+        "bytes": 75127,
         "fresh": true,
-        "rows": 903
+        "rows": 1017
       }
     ],
     "minRows": 350,
@@ -201,16 +205,16 @@
   },
   "sookmyung": {
     "ok": true,
-    "fetchedAt": "2026-07-16T05:59:18.836Z",
+    "fetchedAt": "2026-08-13T08:15:41.246Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 214403,
+    "durationMs": 214352,
     "outputs": [
       {
         "path": "data_26_2/smwu(2026-2).xlsx",
-        "bytes": 68809,
+        "bytes": 70974,
         "fresh": true,
-        "rows": 575
+        "rows": 577
       }
     ],
     "minRows": 230,
@@ -218,16 +222,16 @@
   },
   "sungshin": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:56:15.962Z",
+    "fetchedAt": "2026-08-13T08:15:59.864Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 19471,
+    "durationMs": 18602,
     "outputs": [
       {
         "path": "data_26_2/sungshin(2026-2).xlsx",
-        "bytes": 37920,
+        "bytes": 38878,
         "fresh": true,
-        "rows": 469
+        "rows": 480
       }
     ],
     "minRows": 170,
@@ -235,16 +239,16 @@
   },
   "knu": {
     "ok": true,
-    "fetchedAt": "2026-07-16T06:06:19.525Z",
+    "fetchedAt": "2026-08-13T08:10:31.060Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 402113,
+    "durationMs": 403812,
     "outputs": [
       {
         "path": "data_26_2/kyungpook(2026-2).xlsx",
-        "bytes": 128980,
+        "bytes": 129586,
         "fresh": true,
-        "rows": 1951
+        "rows": 1955
       }
     ],
     "minRows": 800,
@@ -252,16 +256,16 @@
   },
   "skku": {
     "ok": true,
-    "fetchedAt": "2026-07-16T07:37:00.086Z",
+    "fetchedAt": "2026-08-13T10:50:40.584Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 2056905,
+    "durationMs": 2086691,
     "outputs": [
       {
         "path": "data_26_2/skku(2026-2).xlsx",
-        "bytes": 199917,
+        "bytes": 249536,
         "fresh": true,
-        "rows": 1249
+        "rows": 1448
       }
     ],
     "minRows": 550,
@@ -269,16 +273,16 @@
   },
   "sogang": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:55:10.829Z",
+    "fetchedAt": "2026-08-13T07:10:36.872Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 122971,
+    "durationMs": 107687,
     "outputs": [
       {
         "path": "data_26_2/sogang(2026-2).xlsx",
-        "bytes": 68025,
+        "bytes": 77740,
         "fresh": true,
-        "rows": 923
+        "rows": 1060
       }
     ],
     "minRows": 160,
@@ -286,16 +290,16 @@
   },
   "kaist": {
     "ok": true,
-    "fetchedAt": "2026-07-16T21:56:04.063Z",
+    "fetchedAt": "2026-08-13T07:08:49.129Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 14136,
+    "durationMs": 18933,
     "outputs": [
       {
         "path": "data_26_2/kaist(2026-2).xlsx",
-        "bytes": 152557,
+        "bytes": 263635,
         "fresh": true,
-        "rows": 2091
+        "rows": 3876
       }
     ],
     "minRows": 1300,
@@ -303,16 +307,16 @@
   },
   "dongguk": {
     "ok": true,
-    "fetchedAt": "2026-07-16T23:52:51.538Z",
+    "fetchedAt": "2026-08-13T07:10:59.073Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 19153,
+    "durationMs": 22153,
     "outputs": [
       {
         "path": "data_26_2/dongguk(2026-2).xlsx",
-        "bytes": 125799,
+        "bytes": 131308,
         "fresh": true,
-        "rows": 1131
+        "rows": 1178
       }
     ],
     "minRows": 600,
@@ -320,16 +324,16 @@
   },
   "cnu": {
     "ok": true,
-    "fetchedAt": "2026-07-16T23:54:19.180Z",
+    "fetchedAt": "2026-08-13T07:12:26.471Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 87556,
+    "durationMs": 87353,
     "outputs": [
       {
         "path": "data_26_2/cnu(2026-2).xlsx",
-        "bytes": 100688,
+        "bytes": 105149,
         "fresh": true,
-        "rows": 1293
+        "rows": 1311
       }
     ],
     "minRows": 700,
@@ -337,16 +341,16 @@
   },
   "kmu": {
     "ok": true,
-    "fetchedAt": "2026-07-16T23:54:48.778Z",
+    "fetchedAt": "2026-08-13T07:12:47.825Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 29576,
+    "durationMs": 21343,
     "outputs": [
       {
         "path": "data_26_2/kmu(2026-2).xlsx",
-        "bytes": 38976,
+        "bytes": 39846,
         "fresh": true,
-        "rows": 416
+        "rows": 418
       }
     ],
     "minRows": 250,
@@ -354,16 +358,16 @@
   },
   "dgist": {
     "ok": true,
-    "fetchedAt": "2026-07-17T00:27:57.569Z",
+    "fetchedAt": "2026-08-13T06:49:47.495Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 6740,
+    "durationMs": 8197,
     "outputs": [
       {
         "path": "data_26_2/dgist(2026-2).xlsx",
-        "bytes": 69551,
+        "bytes": 70081,
         "fresh": true,
-        "rows": 968
+        "rows": 974
       }
     ],
     "minRows": 500,
@@ -371,16 +375,16 @@
   },
   "snu": {
     "ok": true,
-    "fetchedAt": "2026-07-17T00:54:53.655Z",
+    "fetchedAt": "2026-08-13T07:51:11.794Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 9955,
+    "durationMs": 12257,
     "outputs": [
       {
         "path": "data_26_2/snu(2026-2).xlsx",
-        "bytes": 592732,
+        "bytes": 609128,
         "fresh": true,
-        "rows": 4646
+        "rows": 4706
       }
     ],
     "minRows": 2500,
@@ -388,16 +392,16 @@
   },
   "kw": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:55:56.475Z",
+    "fetchedAt": "2026-08-13T06:49:51.282Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 3973,
+    "durationMs": 3760,
     "outputs": [
       {
         "path": "data_26_2/kw(2026-2).xlsx",
-        "bytes": 75696,
+        "bytes": 112115,
         "fresh": true,
-        "rows": 534
+        "rows": 629
       }
     ],
     "minRows": 400,
@@ -405,16 +409,16 @@
   },
   "ewha": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:55:52.480Z",
+    "fetchedAt": "2026-08-13T06:51:37.546Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 41571,
+    "durationMs": 24220,
     "outputs": [
       {
         "path": "data_26_2/ehwa(2026-2).xlsx",
-        "bytes": 142106,
+        "bytes": 176754,
         "fresh": true,
-        "rows": 1493
+        "rows": 1927
       }
     ],
     "minRows": 600,
@@ -422,16 +426,16 @@
   },
   "korea": {
     "ok": true,
-    "fetchedAt": "2026-08-03T01:04:18.000Z",
+    "fetchedAt": "2026-08-13T06:51:13.218Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": null,
+    "durationMs": 80625,
     "outputs": [
       {
         "path": "data_26_2/korea(2026-2).xlsx",
-        "bytes": 191720,
+        "bytes": 203513,
         "fresh": true,
-        "rows": 2197
+        "rows": 2370
       }
     ],
     "minRows": 750,
@@ -439,16 +443,16 @@
   },
   "hanyang": {
     "ok": true,
-    "fetchedAt": "2026-08-03T15:11:43.000Z",
+    "fetchedAt": "2026-08-13T08:00:42.684Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": null,
+    "durationMs": 460013,
     "outputs": [
       {
         "path": "data_26_2/hanyang(2026-2).xlsx",
-        "bytes": 1193713,
+        "bytes": 1261121,
         "fresh": true,
-        "rows": 4424
+        "rows": 4686
       }
     ],
     "minRows": 1800,
@@ -456,16 +460,16 @@
   },
   "unist": {
     "ok": true,
-    "fetchedAt": "2026-08-06T08:17:27.725Z",
+    "fetchedAt": "2026-08-13T07:40:55.759Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 1694597,
+    "durationMs": 1687888,
     "outputs": [
       {
         "path": "data_26_2/unist(2026-2).xlsx",
-        "bytes": 46545,
+        "bytes": 46476,
         "fresh": true,
-        "rows": 556
+        "rows": 549
       }
     ],
     "minRows": 90,
@@ -473,16 +477,16 @@
   },
   "khu": {
     "ok": true,
-    "fetchedAt": "2026-08-06T08:27:16.278Z",
+    "fetchedAt": "2026-08-13T07:50:59.282Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 588399,
+    "durationMs": 603430,
     "outputs": [
       {
         "path": "data_26_2/kyunghee(2026-2).xlsx",
-        "bytes": 170343,
+        "bytes": 192633,
         "fresh": true,
-        "rows": 1613
+        "rows": 1837
       }
     ],
     "minRows": 750,
@@ -490,16 +494,16 @@
   },
   "jbnu": {
     "ok": true,
-    "fetchedAt": "2026-08-06T15:58:36.778Z",
+    "fetchedAt": "2026-08-13T06:49:52.369Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 1206,
+    "durationMs": 957,
     "outputs": [
       {
         "path": "data_26_2/jbnu(2026-2).xlsx",
-        "bytes": 154077,
+        "bytes": 154393,
         "fresh": true,
-        "rows": 1548
+        "rows": 1550
       }
     ],
     "minRows": 650,
@@ -507,16 +511,16 @@
   },
   "inha": {
     "ok": true,
-    "fetchedAt": "2026-08-06T16:19:10.391Z",
+    "fetchedAt": "2026-08-13T07:53:02.151Z",
     "exitCode": 0,
     "earlyExit": false,
-    "durationMs": 100663,
+    "durationMs": 110298,
     "outputs": [
       {
         "path": "data_26_2/inha(2026-2).xlsx",
-        "bytes": 95977,
+        "bytes": 95743,
         "fresh": true,
-        "rows": 1205
+        "rows": 1201
       }
     ],
     "minRows": 480,

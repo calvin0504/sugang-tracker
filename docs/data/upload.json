@@ -6,10 +6,10 @@
     "sentAt": "2026-07-17T13:09:25.204Z"
   },
   "skku": {
-    "hash": "5f8c4f20c08f27dae0efaabe4bc06b3fcb1a1339ea6e6a1813b29f76e357ef9c",
-    "rows": 1249,
+    "hash": "3b16e767d29a118dbec3e624ca816d903d9703966add7301eac8ecdccbbf237c",
+    "rows": 1448,
     "file": "data_26_2/skku(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:15:37.495Z"
+    "sentAt": "2026-08-13T12:09:47.663Z"
   },
   "postech": {
     "hash": "66c4ed35a9bd48bf998b2f2e776f6ff82d0ee8dfb45c054c4ed0cbbb0e03513e",
@@ -18,70 +18,70 @@
     "sentAt": "2026-07-17T13:15:51.531Z"
   },
   "sejong": {
-    "hash": "4959e2c4dd1c6b634194431c4497f6fe9a4d0f7e32846d73c15ff15ab4971c56",
-    "rows": 1016,
+    "hash": "02abe47d8c81022fe811676d9aabb907abc82dec6cdd7d8ffb13905f32d09516",
+    "rows": 1078,
     "file": "data_26_2/sju(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:16:41.643Z"
+    "sentAt": "2026-08-13T11:13:55.885Z"
   },
   "dgist": {
-    "hash": "8290818ae23814eea424b4dc2eed7ba2aeae31c9c030d473bbbfd350a93d58ff",
-    "rows": 968,
+    "hash": "82d3ab7bde985444bbf1d4926669a44b6c72b9389a9a9ddbe6b76c4b080cd278",
+    "rows": 974,
     "file": "data_26_2/dgist(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:17:28.899Z"
+    "sentAt": "2026-08-13T11:17:05.516Z"
   },
   "ajou": {
-    "hash": "b5d7fe76e8cc62e67e409cd43921d56aaf263d14da4f1ec1fdc06929f914fc3a",
-    "rows": 664,
+    "hash": "994dcfd6be5aedb63ae0938203da61546bb8e60b4c0f1ebba772fe5c36d876cd",
+    "rows": 665,
     "file": "data_26_2/ajou(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:18:00.007Z"
+    "sentAt": "2026-08-13T11:18:22.342Z"
   },
   "cau": {
-    "hash": "b294eb9e09dc0552768ce880985ee6bb0b93a0bfe4804c6a362c6a45e1b54beb",
-    "rows": 2328,
+    "hash": "93b3797855a2044d8c727264983bddd2263e3217fed5fa62c1140759115d1907",
+    "rows": 2382,
     "file": "data_26_2/cau(2026_2).xlsx",
-    "sentAt": "2026-07-17T13:20:18.618Z"
+    "sentAt": "2026-08-13T11:22:51.459Z"
   },
   "gist": {
-    "hash": "33b4d618345a86d3dc01b7994368181d1aa7b0ddf8f67683fdd3d0a4b7e7bce8",
-    "rows": 199,
+    "hash": "57fb450d345eba4cb761e16a22d8bec40d914c5b25b7011cdd344fd2ecd86239",
+    "rows": 244,
     "file": "data_26_2/gist(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:20:27.875Z"
+    "sentAt": "2026-08-13T11:22:59.868Z"
   },
   "hufs": {
-    "hash": "fde7294bc2929b7fc86335753ef64204ed7e03b099ed6f8ce21f8699f89790dc",
-    "rows": 1901,
+    "hash": "e284dd04bf1bc4ce2afc177ebcabbfe1a1c99aa05a7593c6f2328f2d790eb725",
+    "rows": 2061,
     "file": "data_26_2/hufs(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:21:08.697Z"
+    "sentAt": "2026-08-13T11:26:17.499Z"
   },
   "kmu": {
-    "hash": "3eb4f93a2ee323287d86008a6cee34c193f566d5676ed13f3c12a756f01a6fda",
-    "rows": 416,
+    "hash": "736e37244ca598a542eb754ac93b0d681b92c11b3a4fa1860469df90f3a55113",
+    "rows": 418,
     "file": "data_26_2/kmu(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:21:23.339Z"
+    "sentAt": "2026-08-13T11:26:30.985Z"
   },
   "konkuk": {
-    "hash": "c5c50724b0413f8f70803ec845e72d5b368bfa28f2dcdea05d564bad21ba5fef",
-    "rows": 884,
+    "hash": "0bc361049deca041892ff24c56ac5f3a5942193e6e2365fe905cfc47ddb6edc0",
+    "rows": 1011,
     "file": "data_26_2/konkuk(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:22:05.362Z"
+    "sentAt": "2026-08-13T11:29:50.423Z"
   },
   "dongguk": {
-    "hash": "440b874ce297255d6af06acd0ff1e3186cbc11fda79ff0789cad04929280713d",
-    "rows": 1131,
+    "hash": "f51916af387dcbb941acb6352e53af338cbc54a966e5685454183f11ec0452e6",
+    "rows": 1178,
     "file": "data_26_2/dongguk(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:23:07.895Z"
+    "sentAt": "2026-08-13T11:31:46.854Z"
   },
   "hongik": {
-    "hash": "c863b64951fa2575136cf1c6146b1e3bfddfdfb609290c6f8ad75595896383db",
-    "rows": 1017,
+    "hash": "eb811b2cfd71732dac511b8a3784be988c5bc8e1921e71e4677b671d55deeeca",
+    "rows": 1021,
     "file": "data_26_2/hongik(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:23:57.389Z"
+    "sentAt": "2026-08-13T11:32:53.155Z"
   },
   "sogang": {
-    "hash": "30043147ef02c7d4d9aa15fb1b5ebcd26486a8738ddd31877f1d4799c4d2aa1a",
-    "rows": 923,
+    "hash": "ba5929adefe3a8c8e89e12c2988f15a2b66e600c35f41a4241b889ba55e4a2da",
+    "rows": 1060,
     "file": "data_26_2/sogang(2026-2).xlsx",
-    "sentAt": "2026-08-06T15:00:54.000Z"
+    "sentAt": "2026-08-13T11:36:26.393Z"
   },
   "pusan": {
     "hash": "1c5c6fa6dfc11505fab18ceb4f96658e077be6760ba7095a47063b25e5555d8e",
@@ -90,28 +90,28 @@
     "sentAt": "2026-07-17T13:27:13.082Z"
   },
   "cnu": {
-    "hash": "d60e749c0d0944d5306b3b24480fcfb4cd9db00be2e5d5c33bd7016d55c7f7f3",
-    "rows": 1293,
+    "hash": "7248f1bfa8bad54d6e90ec2af4e4171f7187b7faaf01b0bb52def1757efea0e8",
+    "rows": 1311,
     "file": "data_26_2/cnu(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:28:33.083Z"
+    "sentAt": "2026-08-13T11:43:54.637Z"
   },
   "kw": {
-    "hash": "6b1b5b9ea07e53abf9866b8a5bdcc83a28ff167f780c694afdc8f9b27074377d",
-    "rows": 534,
+    "hash": "3ed72accdf0a8ee48b98f0e34a2ba665feb2e3edf78f30471f10dd6ccdec977e",
+    "rows": 629,
     "file": "data_26_2/kw(2026-2).xlsx",
-    "sentAt": "2026-08-06T15:01:12.000Z"
+    "sentAt": "2026-08-13T11:45:12.989Z"
   },
   "sookmyung": {
-    "hash": "eb826aaa7b6f1eb87117080d77417174e9176598c79a5e97511092c2ce61fa46",
-    "rows": 575,
+    "hash": "e2ea21ef8f1f92f228bd421ec590557edc2e1aee111b2d16cc08fa120ae20de1",
+    "rows": 577,
     "file": "data_26_2/smwu(2026-2).xlsx",
-    "sentAt": "2026-07-17T13:29:11.342Z"
+    "sentAt": "2026-08-13T11:46:12.346Z"
   },
   "sungshin": {
-    "hash": "abbebaabec2b75b0cc246386753a7dfa39467a8c56cc5dfbb1aa460b226cddb0",
-    "rows": 469,
+    "hash": "d1f2a563788700885e75c1bc60b165ab81b8731cacf27ab66aa645df2ba612a5",
+    "rows": 480,
     "file": "data_26_2/sungshin(2026-2).xlsx",
-    "sentAt": "2026-08-06T15:02:38.000Z"
+    "sentAt": "2026-08-13T11:46:30.642Z"
   },
   "knu": {
     "hash": "31ec6357c10314bab3218e6f98fce36e0f58fc4b91bfbfd46a3e13585b2f4628",
@@ -170,9 +170,9 @@
     "sentAt": "2026-08-06T14:57:05.000Z"
   },
   "ssu": {
-    "hash": "dd0765ec813ecdeb3a01bd56d1ec6ef1425af8d2c741399a521185fdda4e379d",
-    "rows": 494,
+    "hash": "314faa4df969a9b982bb0813ca8df34f29ea08a4a1116408f6ecdb3cde6d9a29",
+    "rows": 512,
     "file": "data_26_2/ssu(2026-2).xlsx",
-    "sentAt": "2026-08-06T15:10:50.000Z"
+    "sentAt": "2026-08-13T11:45:28.186Z"
   }
 }
