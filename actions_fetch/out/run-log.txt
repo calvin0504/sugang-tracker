@@ -14,8 +14,7 @@
 [Campus] AIㆍSW대학원 (36433)
 [INFO] results = 5
 [Campus] 건축전문대학원 (36437)
-[INFO] results = 0
-[DEBUG] body head = {"lectureRoms":{"results":[],"totalCount":0,"empty":true},"prohibitType":"NONE","searchCount":null,"invalidCode":null,"warningMessage":null}
+[INFO] results = 9
 [Campus] 교육대학원 (30091)
 [INFO] results = 94
 [Campus] 경영대학원 (30120)
@@ -42,5 +41,5 @@
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
 [INFO] results = 11
-[3/3] 저장 시작. totalRows = 1021
+[3/3] 저장 시작. totalRows = 1030
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
