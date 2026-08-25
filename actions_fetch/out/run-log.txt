@@ -8,7 +8,7 @@
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
-[INFO] results = 68
+[INFO] results = 72
 [Campus] 비즈니스IT대학원 (36418)
 [INFO] results = 29
 [Campus] AIㆍSW대학원 (36433)
@@ -26,13 +26,13 @@
 [Campus] 디자인대학원 (30180)
 [INFO] results = 37
 [Campus] 정치대학원 (30201)
-[INFO] results = 22
+[INFO] results = 24
 [Campus] 스포츠산업대학원 (30207)
 [INFO] results = 47
 [Campus] 법무대학원 (30424)
 [INFO] results = 14
 [Campus] 종합예술대학원 (30227)
-[INFO] results = 51
+[INFO] results = 52
 [Campus] 글로벌창업벤처대학원 (30701)
 [INFO] results = 21
 [Campus] 소프트웨어융합대학원 (36272)
@@ -41,5 +41,5 @@
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
 [INFO] results = 11
-[3/3] 저장 시작. totalRows = 1030
+[3/3] 저장 시작. totalRows = 1037
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
