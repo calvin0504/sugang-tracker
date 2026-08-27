@@ -4,7 +4,7 @@
 [INFO] allMajorList = 1484
 [2/3] campus loop 시작
 [Campus] 일반대학원 (30001)
-[INFO] results = 482
+[INFO] results = 484
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
@@ -32,7 +32,7 @@
 [Campus] 법무대학원 (30424)
 [INFO] results = 14
 [Campus] 종합예술대학원 (30227)
-[INFO] results = 52
+[INFO] results = 51
 [Campus] 글로벌창업벤처대학원 (30701)
 [INFO] results = 21
 [Campus] 소프트웨어융합대학원 (36272)
@@ -41,5 +41,5 @@
 [INFO] results = 10
 [Campus] 아시아올림픽대학원 (36401)
 [INFO] results = 11
-[3/3] 저장 시작. totalRows = 1037
+[3/3] 저장 시작. totalRows = 1038
 ✅ saved: /home/runner/work/sugang-tracker/sugang-tracker/actions_fetch/out/kookmin(2026-2).xlsx
