@@ -1,7 +1,7 @@
 [START] KMU crawl (actions port)
 [1/3] commoncodes/all 요청
 [INFO] gradCampusList = 29
-[INFO] allMajorList = 1485
+[INFO] allMajorList = 1501
 [2/3] campus loop 시작
 [Campus] 일반대학원 (30001)
 [INFO] results = 484
