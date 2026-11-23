@@ -8,6 +8,7 @@
 [Campus] 자동차모빌리티대학원 (36373)
 [INFO] results = 18
 [Campus] 테크노디자인전문대학원 (30073)
+[WARN] fetch error (attempt 1/3): fetch failed
 [INFO] results = 72
 [Campus] 비즈니스IT대학원 (36418)
 [INFO] results = 29
